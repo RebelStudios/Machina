@@ -1,0 +1,12 @@
+MultiBlock Machinery
+--------------------
+
+Machine Wall -- Wall of a multiblock machine
+Machine Core -- the core of a multiblock machine
+Machine -- the functional part of a multiblock machine (can be used without Cores/Walls)
+
+Crusher: Ore doubling mechanic
+Smelter: Smelt Ores
+
+
+Upgrade System:
