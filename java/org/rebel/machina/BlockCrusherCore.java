@@ -1,4 +1,4 @@
-package us.xvicario.multiblockmachines;
+package org.rebel.machina;
 
 /**
  * Created by XVicarious on 6/15/2014.

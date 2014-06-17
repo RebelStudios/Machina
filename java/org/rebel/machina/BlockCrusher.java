@@ -1,6 +1,5 @@
-package us.xvicario.multiblockmachines;
+package org.rebel.machina;
 
-import net.minecraft.block.BlockFurnace;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -22,8 +21,8 @@ public class BlockCrusher extends BlockMachine {
     }
 
     public void registerBlockIcons(IIconRegister icon) {
-        machineFace = icon.registerIcon(MBMachine.MODID + ":machineCrusher_face");
-        machineSide = icon.registerIcon(MBMachine.MODID + ":machineWall_0");
+        machineFace = icon.registerIcon(Machina.MODID + ":machineCrusher_face");
+        machineSide = icon.registerIcon(Machina.MODID + ":machineWall_0");
     }
 
     public IIcon getIcon(int side, int metadata) {

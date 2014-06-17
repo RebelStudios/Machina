@@ -1,4 +1,4 @@
-package us.xvicario.multiblockmachines;
+package org.rebel.machina;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -14,12 +14,12 @@ import java.util.List;
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class ItemNugget extends Item {
+public class ItemIngot extends Item {
 
-    public static final String[] itemNames = new String[] {"nuggetLead","nuggetSilver","nuggetCopper","nuggetTin","nuggetBronze","nuggetAluminum","nuggetInvar","nuggetNickel","nuggetSolder","nuggetElectrum","nuggetSteel","nuggetIron"};
+    public static final String[] itemNames = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotBronze","ingotAluminum","ingotInvar","ingotNickel","ingotSolder","ingotElectrum","ingotSteel"};
     public static IIcon[] itemIcons;
 
-    public ItemNugget() {
+    public ItemIngot() {
         super();
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
@@ -28,10 +28,10 @@ public class ItemNugget extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        itemIcons = new IIcon[12];
+        itemIcons = new IIcon[11];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(MBMachine.MODID + ":" + itemNames[i]);
-            itemIcons[i] = ir.registerIcon(MBMachine.MODID + ":" + itemNames[i]);
+            System.out.println(Machina.MODID + ":" + itemNames[i]);
+            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + itemNames[i]);
         }
     }
 
@@ -41,15 +41,15 @@ public class ItemNugget extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 11);
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(),0,10);
         return "item." + itemNames[i];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item par1, CreativeTabs creativeTab, List par3) {
-        for (int x = 0; x < 12; x++) {
-            par3.add(new ItemStack(this, 1, x));
+        for (int x = 0; x < 11; x++) {
+            par3.add(new ItemStack(this,1,x));
         }
     }
 

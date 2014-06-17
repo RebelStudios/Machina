@@ -1,4 +1,4 @@
-package us.xvicario.multiblockmachines;
+package org.rebel.machina;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -29,8 +29,8 @@ public class ItemBlend extends Item {
     public void registerIcons(IIconRegister ir) {
         itemIcons = new IIcon[4];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(MBMachine.MODID + ":" + itemNames[i]);
-            itemIcons[i] = ir.registerIcon(MBMachine.MODID + ":" + itemNames[i]);
+            System.out.println(Machina.MODID + ":" + itemNames[i]);
+            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + itemNames[i]);
         }
     }
 

@@ -1,4 +1,4 @@
-package us.xvicario.multiblockmachines;
+package org.rebel.machina;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
