@@ -10,6 +10,8 @@ item.ingotAluminum.name=Aluminum Ingot
 item.ingotInvar.name=Invar Ingot
 item.ingotNickel.name=Nickel Ingot
 item.ingotSolder.name=Solder Ingot
+item.ingotZinc.name=Zinc Ingot
+item.ingotBrass.name=Brass Ingot
 # Items -- Dusts
 item.dustSilver.name=Silver Dust
 item.dustLead.name=Lead Dust
@@ -24,6 +26,8 @@ item.dustNickel.name=Nickel Dust
 item.dustSolder.name=Solder Dust
 item.dustIron.name=Iron Dust
 item.dustGold.name=Gold Dust
+item.dustZinc.name=Zinc Dust
+item.dustBrass.name=Brass Dust
 # Items -- Nuggets
 item.nuggetSilver.name=Silver Nugget
 item.nuggetLead.name=Lead Nugget
@@ -38,13 +42,25 @@ item.nuggetNickel.name=Nickel Nugget
 item.nuggetSolder.name=Solder Nugget
 item.nuggetIron.name=Iron Nugget
 item.nuggetGold.name=Gold Nugget
+item.nuggetZinc.name=Zinc Nugget
+item.nuggetBrass.name=Brass Nugget
 # Items -- Blends
 item.blendBronze.name=Bronze Blend
 item.blendElectrum.name=Electrum Blend
 item.blendInvar.name=Invar Blend
 item.blendSolder.name=Solder Blend
-# Blocks
-tile.mbm.machineWall.name=Machine Wall
-tile.mbm.machineCrusher.name=Crusher
-tile.mbm.machineCrusherCore.name=Crusher Machine Core
-tile.mbm.blockManualCrusher.name=Manual Crusher
+item.blendBrass.name=Brass Blend
+# Blocks -- Machines
+tile.machina.machineWall.name=Machine Wall
+tile.machina.machineCrusher.name=Crusher
+tile.machina.machineCrusherCore.name=Crusher Machine Core
+tile.machina.blockManualCrusher.name=Manual Crusher
+# Blocks -- Ores
+tile.machina.blockOre.oreLead.name=Lead Ore
+tile.machina.blockOre.oreSilver.name=Silver Ore
+tile.machina.blockOre.oreCopper.name=Copper Ore
+tile.machina.blockOre.oreTin.name=Tin Ore
+tile.machina.blockOre.oreAluminum.name=Aluminum Ore
+tile.machina.blockOre.oreNickel.name=Nickel Ore
+tile.machina.blockOre.oreZinc.name=Zinc Ore
+tile.machina.blockOre.oreElectrum.name=Electrum Ore
