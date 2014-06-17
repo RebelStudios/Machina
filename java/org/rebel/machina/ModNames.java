@@ -10,6 +10,7 @@ public class ModNames {
     public static String blockMachineCrusherString = "machineCrusher";
     public static String blockMachineWallString = "machineWall";
     public static String[] blockMachineCoreStrings = new String[] {"machineCrusherCore"};
+    public static String blockManualCrusher = "blockManualCrusher";
 
     public static String itemIngotString = "itemIngot";
     public static String[] itemIngotStrings = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotBronze","ingotAluminum","ingotInvar","ingotNickel","ingotSolder","ingotElectrum","ingotSteel"};

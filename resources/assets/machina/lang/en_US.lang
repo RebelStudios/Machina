@@ -47,3 +47,4 @@ item.blendSolder.name=Solder Blend
 tile.mbm.machineWall.name=Machine Wall
 tile.mbm.machineCrusher.name=Crusher
 tile.mbm.machineCrusherCore.name=Crusher Machine Core
+tile.mbm.blockManualCrusher.name=Manual Crusher
