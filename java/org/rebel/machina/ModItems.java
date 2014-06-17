@@ -2,10 +2,13 @@ package org.rebel.machina;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import org.rebel.machina.common.items.ItemBlend;
 import org.rebel.machina.common.items.ItemDust;
 import org.rebel.machina.common.items.ItemIngot;
 import org.rebel.machina.common.items.ItemNugget;
+import org.rebel.machina.util.LogHelper;
 
 /**
  * Created by XVicarious on 6/16/2014.
@@ -18,10 +21,25 @@ public class ModItems {
     public static Item itemNugget;
 
     private static void makeItems() {
-        itemIngot = new ItemIngot();
-        itemBlend = new ItemBlend();
-        itemDust = new ItemDust();
-        itemNugget = new ItemNugget();
+        itemIngot = new ItemIngot().setCreativeTab(Machina.machinaTab);
+        itemBlend = new ItemBlend().setCreativeTab(Machina.machinaTab);
+        itemDust = new ItemDust().setCreativeTab(Machina.machinaTab);
+        itemNugget = new ItemNugget().setCreativeTab(Machina.machinaTab);
+    }
+
+    private static void oreRegister() {
+        for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
+            OreDictionary.registerOre(ModNames.itemIngotStrings[i], new ItemStack(itemIngot, 1, i));
+            LogHelper.info("Registered: " + ModNames.itemIngotStrings[i]);
+        }
+        for (int i = 0; i < ModNames.itemNuggetStrings.length; i++) {
+            OreDictionary.registerOre(ModNames.itemNuggetStrings[i], new ItemStack(itemNugget, 1, i));
+            LogHelper.info("Registered: " + ModNames.itemNuggetStrings[i]);
+        }
+        for (int i = 0; i < ModNames.itemDustStrings.length; i++) {
+            OreDictionary.registerOre(ModNames.itemDustStrings[i], new ItemStack(itemDust, 1, i));
+            LogHelper.info("Registered: " + ModNames.itemDustStrings[i]);
+        }
     }
 
     public static void registerItems() {
@@ -30,6 +48,7 @@ public class ModItems {
         GameRegistry.registerItem(itemBlend,"machina.blend");
         GameRegistry.registerItem(itemDust,"machina.dust");
         GameRegistry.registerItem(itemNugget,"machina.nugget");
+        oreRegister();
     }
 
 }

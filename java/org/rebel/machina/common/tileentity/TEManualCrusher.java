@@ -21,7 +21,7 @@ public class TEManualCrusher extends TileEntity {
 
     public void crushTick() {
         if (worldObj.isRemote) {
-            Machina.packetPipeline.
+            //Machina.packetPipeline.
         }
 /*        if (worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord) == Blocks.iron_ore) {
             if (this.crushing == 5) {
