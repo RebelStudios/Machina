@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

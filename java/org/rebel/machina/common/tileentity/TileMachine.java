@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

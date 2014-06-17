@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.blocks;
 
 /**
  * Created by XVicarious on 6/15/2014.

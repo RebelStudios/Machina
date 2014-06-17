@@ -1,3 +1,4 @@
+# Items -- Ingots
 item.ingotSilver.name=Silver Ingot
 item.ingotLead.name=Lead Ingot
 item.ingotBronze.name=Bronze Ingot
@@ -9,6 +10,7 @@ item.ingotAluminum.name=Aluminum Ingot
 item.ingotInvar.name=Invar Ingot
 item.ingotNickel.name=Nickel Ingot
 item.ingotSolder.name=Solder Ingot
+# Items -- Dusts
 item.dustSilver.name=Silver Dust
 item.dustLead.name=Lead Dust
 item.dustBronze.name=Bronze Dust
@@ -22,6 +24,7 @@ item.dustNickel.name=Nickel Dust
 item.dustSolder.name=Solder Dust
 item.dustIron.name=Iron Dust
 item.dustGold.name=Gold Dust
+# Items -- Nuggets
 item.nuggetSilver.name=Silver Nugget
 item.nuggetLead.name=Lead Nugget
 item.nuggetBronze.name=Bronze Nugget
@@ -35,10 +38,12 @@ item.nuggetNickel.name=Nickel Nugget
 item.nuggetSolder.name=Solder Nugget
 item.nuggetIron.name=Iron Nugget
 item.nuggetGold.name=Gold Nugget
+# Items -- Blends
 item.blendBronze.name=Bronze Blend
 item.blendElectrum.name=Electrum Blend
 item.blendInvar.name=Invar Blend
 item.blendSolder.name=Solder Blend
+# Blocks
 tile.mbm.machineWall.name=Machine Wall
 tile.mbm.machineCrusher.name=Crusher
 tile.mbm.machineCrusherCore.name=Crusher Machine Core

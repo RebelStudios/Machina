@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -8,17 +8,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import org.rebel.machina.Machina;
+import org.rebel.machina.ModNames;
 
 import java.util.List;
 
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class ItemBlend extends Item {
-    public static final String[] itemNames = new String[] {"blendElectrum","blendBronze","blendInvar","blendSolder"};
+public class ItemIngot extends Item {
+
     public static IIcon[] itemIcons;
 
-    public ItemBlend() {
+    public ItemIngot() {
         super();
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
@@ -27,10 +29,10 @@ public class ItemBlend extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        itemIcons = new IIcon[4];
+        itemIcons = new IIcon[ModNames.itemIngotStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + itemNames[i]);
-            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + itemNames[i]);
+            System.out.println(Machina.MODID + ":" + ModNames.itemIngotStrings[i]);
+            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemIngotStrings[i]);
         }
     }
 
@@ -40,15 +42,15 @@ public class ItemBlend extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 3);
-        return "item." + itemNames[i];
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(),0,ModNames.itemIngotStrings.length-1);
+        return "item." + ModNames.itemIngotStrings[i];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item par1, CreativeTabs creativeTab, List par3) {
-        for (int x = 0; x < 4; x++) {
-            par3.add(new ItemStack(this, 1, x));
+        for (int x = 0; x < ModNames.itemIngotStrings.length; x++) {
+            par3.add(new ItemStack(this,1,x));
         }
     }
 

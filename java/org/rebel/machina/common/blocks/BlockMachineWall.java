@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,9 +9,9 @@ import java.util.Random;
 /**
  * Created by XVicarious on 6/15/2014.
  */
-public class MachineWall extends Block {
+public class BlockMachineWall extends Block {
 
-    public MachineWall() {
+    public BlockMachineWall() {
         super(Material.iron);
     }
 

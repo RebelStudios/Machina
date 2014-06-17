@@ -1,9 +1,10 @@
-package org.rebel.machina;
+package org.rebel.machina.common.blocks;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+import org.rebel.machina.Machina;
 
 /**
  * Created by XVicarious on 6/15/2014.

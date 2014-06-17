@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.common.items;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -8,18 +8,20 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import org.rebel.machina.Machina;
+import org.rebel.machina.ModItems;
+import org.rebel.machina.ModNames;
 
 import java.util.List;
 
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class ItemNugget extends Item {
+public class ItemBlend extends Item {
 
-    public static final String[] itemNames = new String[] {"nuggetLead","nuggetSilver","nuggetCopper","nuggetTin","nuggetBronze","nuggetAluminum","nuggetInvar","nuggetNickel","nuggetSolder","nuggetElectrum","nuggetSteel","nuggetIron"};
     public static IIcon[] itemIcons;
 
-    public ItemNugget() {
+    public ItemBlend() {
         super();
         this.setHasSubtypes(true);
         this.setMaxDamage(0);
@@ -28,10 +30,10 @@ public class ItemNugget extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        itemIcons = new IIcon[12];
+        itemIcons = new IIcon[ModNames.itemBlendStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + itemNames[i]);
-            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + itemNames[i]);
+            System.out.println(Machina.MODID + ":" + ModNames.itemBlendStrings[i]);
+            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemBlendStrings[i]);
         }
     }
 
@@ -41,14 +43,14 @@ public class ItemNugget extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, 11);
-        return "item." + itemNames[i];
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, ModNames.itemBlendStrings.length-1);
+        return "item." + ModNames.itemBlendStrings[i];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item par1, CreativeTabs creativeTab, List par3) {
-        for (int x = 0; x < 12; x++) {
+        for (int x = 0; x < ModNames.itemBlendStrings.length; x++) {
             par3.add(new ItemStack(this, 1, x));
         }
     }
