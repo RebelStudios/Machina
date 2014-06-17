@@ -64,3 +64,15 @@ tile.machina.blockOre.oreAluminum.name=Aluminum Ore
 tile.machina.blockOre.oreNickel.name=Nickel Ore
 tile.machina.blockOre.oreZinc.name=Zinc Ore
 tile.machina.blockOre.oreElectrum.name=Electrum Ore
+# Blocks -- Metal Blocks
+tile.machina.blockMetal.blockLead.name=Block of Lead
+tile.machina.blockMetal.blockTin.name=Block of Tin
+tile.machina.blockMetal.blockCopper.name=Block of Copper
+tile.machina.blockMetal.blockBronze.name=Block of Bronze
+tile.machina.blockMetal.blockBrass.name=Block of Brass
+tile.machina.blockMetal.blockElectrum.name=Block of Electrum
+tile.machina.blockMetal.blockSolder.name=Block of Solder
+tile.machina.blockMetal.blockInvar.name=Block of Invar
+tile.machina.blockMetal.blockSteel.name=Block of Steel
+tile.machina.blockMetal.blockAluminum.name=Block of Aluminum
+tile.machina.blockMetal.blockNickel.name=Block of Nickel

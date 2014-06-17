@@ -13,6 +13,8 @@ public class ModNames {
     public static String blockManualCrusher = "blockManualCrusher";
     public static String blockOreName = "blockOre";
     public static String[] blockOreNames = new String[] {"oreLead","oreSilver","oreCopper","oreTin","oreAluminum","oreNickel","oreElectrum","oreZinc"};
+    public static String blockMetalName = "blockMetal";
+    public static String[] blockMetalNames = new String[] {"blockLead","blockSilver","blockCopper","blockTin","blockBronze","blockAluminum","blockInvar","blockNickel","blockSolder","blockElectrum","blockSteel","blockBrass","blockZinc"};
 
     public static String itemIngotString = "itemIngot";
     public static String[] itemIngotStrings = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotBronze","ingotAluminum","ingotInvar","ingotNickel","ingotSolder","ingotElectrum","ingotSteel","ingotBrass","ingotZinc"};

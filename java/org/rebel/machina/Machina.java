@@ -44,5 +44,6 @@ public class Machina
         ModBlocks.registerBlocks();
         ModItems.registerItems();
         MachinaRecipes.addBlendRecipes();
+        MachinaRecipes.addMetalBlockRecipes();
     }
 }
