@@ -45,5 +45,6 @@ public class Machina
         ModItems.registerItems();
         MachinaRecipes.addBlendRecipes();
         MachinaRecipes.addMetalBlockRecipes();
+        GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
     }
 }

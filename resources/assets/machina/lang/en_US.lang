@@ -12,6 +12,7 @@ item.ingotNickel.name=Nickel Ingot
 item.ingotSolder.name=Solder Ingot
 item.ingotZinc.name=Zinc Ingot
 item.ingotBrass.name=Brass Ingot
+item.ingotPlatinum.name=Platinum Ingot
 # Items -- Dusts
 item.dustSilver.name=Silver Dust
 item.dustLead.name=Lead Dust
@@ -28,6 +29,7 @@ item.dustIron.name=Iron Dust
 item.dustGold.name=Gold Dust
 item.dustZinc.name=Zinc Dust
 item.dustBrass.name=Brass Dust
+item.dustPlatinum.name=Platinum Dust
 # Items -- Nuggets
 item.nuggetSilver.name=Silver Nugget
 item.nuggetLead.name=Lead Nugget
@@ -44,6 +46,7 @@ item.nuggetIron.name=Iron Nugget
 item.nuggetGold.name=Gold Nugget
 item.nuggetZinc.name=Zinc Nugget
 item.nuggetBrass.name=Brass Nugget
+item.nuggetPlatinum.name=Platinum Nugget
 # Items -- Blends
 item.blendBronze.name=Bronze Blend
 item.blendElectrum.name=Electrum Blend
@@ -66,6 +69,7 @@ tile.machina.blockOre.oreZinc.name=Zinc Ore
 tile.machina.blockOre.oreElectrum.name=Electrum Ore
 # Blocks -- Metal Blocks
 tile.machina.blockMetal.blockLead.name=Block of Lead
+tile.machina.blockMetal.blockSilver.name=Block of Silver
 tile.machina.blockMetal.blockTin.name=Block of Tin
 tile.machina.blockMetal.blockCopper.name=Block of Copper
 tile.machina.blockMetal.blockBronze.name=Block of Bronze
@@ -76,3 +80,4 @@ tile.machina.blockMetal.blockInvar.name=Block of Invar
 tile.machina.blockMetal.blockSteel.name=Block of Steel
 tile.machina.blockMetal.blockAluminum.name=Block of Aluminum
 tile.machina.blockMetal.blockNickel.name=Block of Nickel
+tile.machina.blockMetal.blockPlatinum.name=Block of Platinum
