@@ -1,6 +1,5 @@
 package org.rebel.machina;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import cpw.mods.fml.common.network.ByteBufUtils;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;

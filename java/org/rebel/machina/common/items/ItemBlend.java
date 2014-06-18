@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import org.rebel.machina.Machina;
-import org.rebel.machina.ModItems;
 import org.rebel.machina.ModNames;
 
 import java.util.List;

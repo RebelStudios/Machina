@@ -1,11 +1,6 @@
 package org.rebel.machina.common.tileentity;
 
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import org.rebel.machina.Machina;
 
 /**
  * Created by XVicarious on 6/16/2014.
