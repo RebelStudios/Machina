@@ -31,7 +31,6 @@ public class ItemNugget extends Item {
     public void registerIcons(IIconRegister ir) {
         itemIcons = new IIcon[ModNames.itemNuggetStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + ModNames.itemNuggetStrings[i]);
             itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemNuggetStrings[i]);
         }
     }

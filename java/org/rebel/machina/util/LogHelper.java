@@ -12,7 +12,7 @@ public class LogHelper {
     private static Logger logger;
 
     public static void init() {
-        logger  = FMLLog.getLogger();
+        logger = FMLLog.getLogger();
     }
 
     public static void info(String message) {

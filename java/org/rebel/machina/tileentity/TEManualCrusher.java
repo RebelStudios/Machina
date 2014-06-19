@@ -9,6 +9,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import org.rebel.machina.recipe.MCRecipe;
 import org.rebel.machina.recipe.RecipeLists;
+import org.rebel.machina.util.LogHelper;
 
 import java.util.Random;
 
@@ -40,9 +41,11 @@ public class TEManualCrusher extends TileEntity {
             crushing = 0;
         }*/
         Block toCrush = worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord);
+        int metadata = worldObj.getBlockMetadata(this.xCoord,this.yCoord-1,this.zCoord);
+        LogHelper.info(toCrush.getUnlocalizedName() + ":" + metadata);
         MCRecipe recipe = null;
         for (MCRecipe r : RecipeLists.mcRecipes) {
-            if  (r != null && r.isValidOre(toCrush)) {
+            if  (r != null && r.isValidOre(toCrush, metadata)) {
                 recipe = r;
                 break;
             }

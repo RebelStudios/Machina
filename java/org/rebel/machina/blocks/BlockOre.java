@@ -13,6 +13,7 @@ import org.rebel.machina.Machina;
 import org.rebel.machina.info.ModNames;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by XVicarious on 6/17/2014.
@@ -24,6 +25,7 @@ public class BlockOre extends Block {
 
     public BlockOre() {
         super(Material.rock);
+        this.setHardness(5.0f);
     }
 
     @Override
@@ -41,6 +43,11 @@ public class BlockOre extends Block {
         for (int i = 0; i < icons.length; i++) {
             icons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.blockOreNames[i]);
         }
+    }
+
+    @Override
+    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_) {
+        return super.getItemDropped(p_149650_1_, p_149650_2_, p_149650_3_);
     }
 
     @Override

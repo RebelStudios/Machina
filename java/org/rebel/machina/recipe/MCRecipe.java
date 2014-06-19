@@ -31,10 +31,9 @@ public class MCRecipe {
     public MCRecipe(Object ore, int jumpsToCrush, Pair<ItemStack,Float>... outputs) {
         blockOre = new ArrayList<ItemStack>();
         if (ore instanceof Block) {
-            blockOre.add(new ItemStack((Block)ore));
+            blockOre.add(new ItemStack((Block)ore));  // Bad Practice... Will remove.  Doesn't give any metadata
         } else if (ore instanceof String) {
             blockOreString = (String)ore;
-            //blockOre.add(OreDictionary.getOres();
             for (ItemStack i : OreDictionary.getOres((String)ore)) {
                 blockOre.add(i);
             }
@@ -43,17 +42,7 @@ public class MCRecipe {
         this.outputs = outputs;
     }
 
-    public boolean isValidOre(Block input) {
-        if (blockOre.contains(input)) {
-            return true;
-        }
-        return false;
-    }
-
     public boolean isValidOre(Block input, int metadata) {
-        if (blockOre.contains(input)) {
-            return true;
-        }
         return false;
     }
 

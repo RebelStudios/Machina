@@ -31,7 +31,6 @@ public class ItemDust extends Item {
     public void registerIcons(IIconRegister ir) {
         itemIcons = new IIcon[ModNames.itemDustStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + ModNames.itemDustStrings[i]);
             itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemDustStrings[i]);
         }
     }

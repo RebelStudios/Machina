@@ -31,7 +31,6 @@ public class ItemIngot extends Item {
     public void registerIcons(IIconRegister ir) {
         itemIcons = new IIcon[ModNames.itemIngotStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + ModNames.itemIngotStrings[i]);
             itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemIngotStrings[i]);
         }
     }

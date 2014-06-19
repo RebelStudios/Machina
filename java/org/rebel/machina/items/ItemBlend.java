@@ -31,7 +31,6 @@ public class ItemBlend extends Item {
     public void registerIcons(IIconRegister ir) {
         itemIcons = new IIcon[ModNames.itemBlendStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            System.out.println(Machina.MODID + ":" + ModNames.itemBlendStrings[i]);
             itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemBlendStrings[i]);
         }
     }
