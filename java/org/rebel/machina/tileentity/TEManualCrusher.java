@@ -42,7 +42,7 @@ public class TEManualCrusher extends TileEntity {
         Block toCrush = worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord);
         MCRecipe recipe = null;
         for (MCRecipe r : RecipeLists.mcRecipes) {
-            if (r.blockOre == toCrush) {
+            if (r.isValidOre(toCrush)) {
                 recipe = r;
                 break;
             }
