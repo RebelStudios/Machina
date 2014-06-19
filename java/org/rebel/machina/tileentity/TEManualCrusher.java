@@ -4,10 +4,8 @@ import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import org.rebel.machina.recipe.MCRecipe;
+import org.rebel.machina.recipe.ManualCrusherRecipe;
 import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.util.LogHelper;
 
@@ -43,8 +41,8 @@ public class TEManualCrusher extends TileEntity {
         Block toCrush = worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord);
         int metadata = worldObj.getBlockMetadata(this.xCoord,this.yCoord-1,this.zCoord);
         LogHelper.info(toCrush.getUnlocalizedName() + ":" + metadata);
-        MCRecipe recipe = null;
-        for (MCRecipe r : RecipeLists.mcRecipes) {
+        ManualCrusherRecipe recipe = null;
+        for (ManualCrusherRecipe r : RecipeLists.mcRecipes) {
             if  (r != null && r.isValidOre(toCrush, metadata)) {
                 recipe = r;
                 break;

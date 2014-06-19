@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * @author XVicarious
  */
-public class MCRecipe {
+public class ManualCrusherRecipe {
 
     public ArrayList<ItemStack> blockOre;
     private String blockOreString;
@@ -28,10 +28,10 @@ public class MCRecipe {
      * @param jumpsToCrush How many times you have to jump on the crusher to crush the block
      * @param outputs ItemStack (what is given from crushing the ore) Integer (the % chance you will get that output)
      */
-    public MCRecipe(Object ore, int jumpsToCrush, Pair<ItemStack,Float>... outputs) {
+    public ManualCrusherRecipe(Object ore, int jumpsToCrush, Pair<ItemStack, Float>... outputs) {
         blockOre = new ArrayList<ItemStack>();
         if (ore instanceof Block) {
-            blockOre.add(new ItemStack((Block)ore));  // Bad Practice... Will remove.  Doesn't give any metadata
+            blockOre.add(new ItemStack((Block)ore, 1, 0));  // Bad Practice... Will remove.  Doesn't give any metadata
         } else if (ore instanceof String) {
             blockOreString = (String)ore;
             for (ItemStack i : OreDictionary.getOres((String)ore)) {
