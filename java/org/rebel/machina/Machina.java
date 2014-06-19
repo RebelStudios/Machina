@@ -4,6 +4,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -27,8 +28,13 @@ public class Machina
     };
 
     @EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void preInit(FMLPreInitializationEvent event) {
         LogHelper.init();
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
+    }
+
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
         ModBlocks.registerBlocks();
         ModItems.registerItems();
         MachinaRecipes.addBlendRecipes();

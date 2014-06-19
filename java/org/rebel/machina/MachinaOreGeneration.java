@@ -28,7 +28,7 @@ public class MachinaOreGeneration implements IWorldGenerator {
                 int randPosX = chunkX + random.nextInt(16);
                 int randPosY = random.nextInt(64);
                 int randPosZ = chunkZ + random.nextInt(16);
-                (new WorldGenMinable(ModBlocks.blockOre, j, 10, Blocks.stone)).generate(world, random, randPosX, randPosY, randPosZ); //ModBlocks.blockOre
+                (new WorldGenMinable(ModBlocks.blockOre, j, MachinaInfo.oreGenerationSize[j], Blocks.stone)).generate(world, random, randPosX, randPosY, randPosZ); //ModBlocks.blockOre
             }
         }
     }
