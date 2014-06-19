@@ -45,8 +45,14 @@ public class Machina
     public void init(FMLInitializationEvent event) {
         ModBlocks.registerBlocks();
         ModItems.registerItems();
-        MachinaRecipes.addBlendRecipes();
-        MachinaRecipes.addMetalBlockRecipes();
+        addRecipes();
         GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
+    }
+
+    private void addRecipes() {
+        ModRecipes.addBlendRecipes();
+        ModRecipes.addMetalBlockRecipes();
+        ModRecipes.addSingleIngotRecipes();
+        ModRecipes.addNuggetRecipes();
     }
 }

@@ -17,13 +17,12 @@ public class ModNames {
     public static String[] blockMetalNames = new String[] {"blockLead","blockSilver","blockCopper","blockTin","blockBronze","blockAluminum","blockInvar","blockNickel","blockSolder","blockElectrum","blockSteel","blockBrass","blockZinc","blockPlatinum"};
 
     public static String itemIngotString = "itemIngot";
-    public static String[] itemIngotStrings = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotBronze","ingotAluminum","ingotInvar","ingotNickel","ingotSolder","ingotElectrum","ingotSteel","ingotBrass","ingotZinc","ingotPlatinum"};
+    public static String[] itemIngotStrings = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotAluminum","ingotNickel","ingotElectrum","ingotZinc","ingotPlatinum","ingotBronze","ingotInvar","ingotSolder","ingotSteel","ingotBrass"};
     public static String itemNuggetString = "itemNugget";
-    public static String[] itemNuggetStrings = new String[] {"nuggetLead","nuggetSilver","nuggetCopper","nuggetTin","nuggetBronze","nuggetAluminum","nuggetInvar","nuggetNickel","nuggetSolder","nuggetElectrum","nuggetSteel","nuggetIron","nuggetBrass","nuggetZinc","nuggetPlatinum"};
+    public static String[] itemNuggetStrings = new String[] {"nuggetLead","nuggetSilver","nuggetCopper","nuggetTin","nuggetAluminum","nuggetNickel","nuggetElectrum","nuggetZinc","nuggetPlatinum","nuggetBronze","nuggetInvar","nuggetSolder","nuggetSteel","nuggetBrass","nuggetIron"};
     public static String itemDustString = "itemDust";
-    public static String[] itemDustStrings = new String[] {"dustLead","dustSilver","dustCopper","dustTin","dustBronze","dustAluminum","dustInvar","dustNickel","dustSolder","dustElectrum","dustSteel","dustGold","dustIron","dustBrass","dustZinc","dustPlatinum"};
+    public static String[] itemDustStrings = new String[] {"dustLead","dustSilver","dustCopper","dustTin","dustAluminum","dustNickel","dustElectrum","dustZinc","dustPlatinum","dustBronze","dustInvar","dustSolder","dustSteel","dustBrass","dustGold","dustIron"};
     public static String itemBlendString = "itemBlend";
     public static String[] itemBlendStrings = new String[] {"blendElectrum","blendBronze","blendInvar","blendSolder","blendBrass"};
-
 
 }
