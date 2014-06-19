@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.info;
 
 /**
  * Created by XVicarious on 6/16/2014.

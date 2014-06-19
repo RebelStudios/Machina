@@ -1,4 +1,4 @@
-package org.rebel.machina;
+package org.rebel.machina.network;
 
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;

@@ -4,10 +4,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.rebel.machina.common.items.ItemBlend;
-import org.rebel.machina.common.items.ItemDust;
-import org.rebel.machina.common.items.ItemIngot;
-import org.rebel.machina.common.items.ItemNugget;
+import org.rebel.machina.info.ModNames;
+import org.rebel.machina.items.ItemBlend;
+import org.rebel.machina.items.ItemDust;
+import org.rebel.machina.items.ItemIngot;
+import org.rebel.machina.items.ItemNugget;
 import org.rebel.machina.util.LogHelper;
 
 /**

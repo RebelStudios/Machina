@@ -1,4 +1,4 @@
-package org.rebel.machina.common.blocks;
+package org.rebel.machina.blocks;
 
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;

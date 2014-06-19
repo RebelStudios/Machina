@@ -1,10 +1,13 @@
-package org.rebel.machina;
+package org.rebel.machina.worldgen;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
+import org.rebel.machina.ModBlocks;
+import org.rebel.machina.info.MachinaInfo;
+import org.rebel.machina.info.ModNames;
 
 import java.util.Random;
 

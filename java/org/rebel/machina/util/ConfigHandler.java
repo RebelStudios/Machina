@@ -1,6 +1,7 @@
-package org.rebel.machina;
+package org.rebel.machina.util;
 
 import net.minecraftforge.common.config.Configuration;
+import org.rebel.machina.info.MachinaInfo;
 
 import java.io.File;
 

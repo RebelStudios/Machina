@@ -1,4 +1,6 @@
-package org.rebel.machina;
+package org.rebel.machina.proxy;
+
+import org.rebel.machina.network.PacketManualCrusher;
 
 /**
  * Created by bmaurer on 6/17/2014.

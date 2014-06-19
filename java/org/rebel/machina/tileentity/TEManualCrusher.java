@@ -1,4 +1,4 @@
-package org.rebel.machina.common.tileentity;
+package org.rebel.machina.tileentity;
 
 import net.minecraft.tileentity.TileEntity;
 

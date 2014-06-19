@@ -4,9 +4,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.rebel.machina.common.blocks.*;
-import org.rebel.machina.common.items.ItemBlockMetal;
-import org.rebel.machina.common.items.ItemBlockOre;
+import org.rebel.machina.blocks.*;
+import org.rebel.machina.info.ModNames;
+import org.rebel.machina.items.ItemBlockMetal;
+import org.rebel.machina.items.ItemBlockOre;
 import org.rebel.machina.util.LogHelper;
 
 /**

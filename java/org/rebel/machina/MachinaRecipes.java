@@ -3,6 +3,7 @@ package org.rebel.machina;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import org.rebel.machina.info.ModNames;
 
 /**
  * Created by bmaurer on 6/17/2014.

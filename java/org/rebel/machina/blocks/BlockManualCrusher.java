@@ -1,11 +1,11 @@
-package org.rebel.machina.common.blocks;
+package org.rebel.machina.blocks;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import org.rebel.machina.common.tileentity.TEManualCrusher;
+import org.rebel.machina.tileentity.TEManualCrusher;
 
 /**
  * Created by XVicarious on 6/16/2014.

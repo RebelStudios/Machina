@@ -1,9 +1,9 @@
-package org.rebel.machina.common.items;
+package org.rebel.machina.items;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import org.rebel.machina.ModNames;
+import org.rebel.machina.info.ModNames;
 
 /**
  * Created by XVicarious on 6/17/2014.
