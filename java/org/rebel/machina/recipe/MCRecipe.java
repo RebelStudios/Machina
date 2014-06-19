@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class MCRecipe {
 
-    public ArrayList<Block> blockOre;
+    public ArrayList<ItemStack> blockOre;
     private String blockOreString;
     public int jumpsToCrush;
     public Pair<ItemStack,Float>[] outputs;
@@ -29,15 +29,14 @@ public class MCRecipe {
      * @param outputs ItemStack (what is given from crushing the ore) Integer (the % chance you will get that output)
      */
     public MCRecipe(Object ore, int jumpsToCrush, Pair<ItemStack,Float>... outputs) {
-        blockOre = new ArrayList<Block>();
+        blockOre = new ArrayList<ItemStack>();
         if (ore instanceof Block) {
-            blockOre.add((Block)ore);
+            blockOre.add(new ItemStack((Block)ore));
         } else if (ore instanceof String) {
             blockOreString = (String)ore;
             //blockOre.add(OreDictionary.getOres();
             for (ItemStack i : OreDictionary.getOres((String)ore)) {
-                Block tO = Block.getBlockFromItem(i.getItem());
-                blockOre.add(tO);
+                blockOre.add(i);
             }
         }
         this.jumpsToCrush = jumpsToCrush;
@@ -45,15 +44,16 @@ public class MCRecipe {
     }
 
     public boolean isValidOre(Block input) {
-        LogHelper.info("isValidOre");
-        if (input == Blocks.air) {
-            return false;
-        }
         if (blockOre.contains(input)) {
-            LogHelper.info("Hey you're good!");
             return true;
         }
-        LogHelper.info("Nope :/");
+        return false;
+    }
+
+    public boolean isValidOre(Block input, int metadata) {
+        if (blockOre.contains(input)) {
+            return true;
+        }
         return false;
     }
 
