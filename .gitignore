@@ -219,8 +219,3 @@ gradlew.bat
 gradlew
 gradle/
 eclipse/
-
-#IDEA
-*.iml
-*.ipr
-*.iws
