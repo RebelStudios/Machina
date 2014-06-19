@@ -1,9 +1,11 @@
-package org.rebel.machina;
+package org.rebel.machina.recipe;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import org.rebel.machina.ModBlocks;
+import org.rebel.machina.ModItems;
 import org.rebel.machina.info.ModNames;
 
 /**
@@ -31,6 +33,12 @@ public class ModRecipes {
         }
         GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, ModNames.itemDustStrings.length-1), new ItemStack(Items.iron_ingot), 0.5f);
         GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, ModNames.itemDustStrings.length-2), new ItemStack(Items.gold_ingot), 0.5f);
+        /* Blends */
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 0), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotElectrum")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 1), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotBronze")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 2), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotInvar")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 3), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotSolder")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 4), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotBrass")), 0.5f);
     }
 
     public static void addNuggetRecipes() {

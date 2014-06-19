@@ -11,6 +11,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import org.rebel.machina.network.PacketHandler;
 import org.rebel.machina.proxy.MachinaProxy;
+import org.rebel.machina.recipe.ModRecipes;
+import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.util.ConfigHandler;
 import org.rebel.machina.util.LogHelper;
 import org.rebel.machina.worldgen.MachinaOreGeneration;
@@ -54,5 +56,6 @@ public class Machina
         ModRecipes.addMetalBlockRecipes();
         ModRecipes.addSingleIngotRecipes();
         ModRecipes.addNuggetRecipes();
+        RecipeLists.makeRecipes();
     }
 }
