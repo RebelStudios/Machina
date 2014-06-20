@@ -5,6 +5,8 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
+import org.rebel.machina.Machina;
+import org.rebel.machina.network.PacketManualCrusher;
 import org.rebel.machina.recipe.ManualCrusherRecipe;
 import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.util.LogHelper;
@@ -24,45 +26,32 @@ public class TEManualCrusher extends TileEntity {
     }
 
     public void crushTick() {
-        if (worldObj.isRemote) {
-            //Machina.packetPipeline.
-        }
-        /*if (worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord) == Blocks.iron_ore) {
-            if (this.crushing == 5) {
-                worldObj.setBlockToAir(this.xCoord,this.yCoord-1,this.zCoord);
-                EntityItem ei = new EntityItem(worldObj,this.xCoord,this.yCoord-1,this.zCoord,new ItemStack(Items.iron_ingot));
-                worldObj.spawnEntityInWorld(ei);
-            } else {
-                this.crushing++;
-            }
-        } else {
-            crushing = 0;
-        }*/
-        Block toCrush = worldObj.getBlock(this.xCoord,this.yCoord-1,this.zCoord);
-        int metadata = worldObj.getBlockMetadata(this.xCoord,this.yCoord-1,this.zCoord);
-        LogHelper.info(toCrush.getUnlocalizedName() + ":" + metadata);
-        ManualCrusherRecipe recipe = null;
-        for (ManualCrusherRecipe r : RecipeLists.mcRecipes) {
-            if  (r != null && r.isValidOre(toCrush, metadata)) {
-                recipe = r;
-                break;
-            }
-        }
-        if (recipe != null) {
-            if (this.crushing >= recipe.jumpsToCrush) {
-                worldObj.setBlockToAir(this.xCoord, this.yCoord - 1, this.zCoord);
-                for (Pair<ItemStack, Float> p : recipe.outputs) {
-                    Random r = new Random();
-                    float c = r.nextFloat();
-                    if (c < p.getValue()) {
-                        EntityItem ei = new EntityItem(worldObj, this.xCoord, this.yCoord - 1, this.zCoord, p.getKey());
-                        worldObj.spawnEntityInWorld(ei);
-                    }
+            //Machina.network.sendToServer(new PacketManualCrusher(this.worldObj.provider.dimensionId, crushing, this.xCoord, this.yCoord, this.zCoord));
+            Block toCrush = worldObj.getBlock(xCoord,yCoord-1,zCoord);
+            int metadata = worldObj.getBlockMetadata(xCoord,yCoord-1,zCoord);
+            LogHelper.info(toCrush.getUnlocalizedName() + ":" + metadata);
+            ManualCrusherRecipe recipe = null;
+            for (ManualCrusherRecipe r : RecipeLists.mcRecipes) {
+                if  (r != null && r.isValidOre(toCrush, metadata)) {
+                    recipe = r;
+                    break;
                 }
-            } else {
-                this.crushing++;
             }
-        }
+            if (recipe != null) {
+                if (crushing >= recipe.jumpsToCrush) {
+                    for (Pair<ItemStack, Float> p : recipe.outputs) {
+                        Random r = new Random();
+                        float c = r.nextFloat();
+                        if (c < p.getValue()) {
+                            LogHelper.info("Sendddingg...");
+                            Machina.network.sendToServer(new PacketManualCrusher(this.worldObj.provider.dimensionId, crushing, this.xCoord, this.yCoord, this.zCoord, p.getKey()));
+                        }
+                    }
+                    crushing = 0;
+                } else {
+                    crushing++;
+                }
+            }
     }
 
 }

@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import org.rebel.machina.ModItems;
 import org.rebel.machina.info.ModNames;
+import org.rebel.machina.util.LogHelper;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class RecipeLists {
             ItemStack stack = new ItemStack(ModItems.itemDust, 1, i);
             mcRecipes.add(new ManualCrusherRecipe(ModNames.blockOreNames[i], 6, new Pair<ItemStack, Float>(stack, 1.0f), new Pair<ItemStack, Float>(stack, 0.9f)));
         }
+        LogHelper.info(mcRecipes.get(0).blockOreToString());
     }
 
     public static ManualCrusherRecipe getMCRecipe(Block block) {

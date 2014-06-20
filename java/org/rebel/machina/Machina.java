@@ -5,11 +5,14 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import org.rebel.machina.network.PacketHandler;
+import org.rebel.machina.network.PacketManualCrusher;
 import org.rebel.machina.proxy.MachinaProxy;
 import org.rebel.machina.recipe.ModRecipes;
 import org.rebel.machina.recipe.RecipeLists;
@@ -29,7 +32,7 @@ public class Machina
     public static final String NAME = "Machina";
     @SidedProxy(clientSide = "org.rebel.machina.proxy.MachinaClientProxy", serverSide = "org.rebel.machina.proxy.MachinaServerProxy")
     public static MachinaProxy proxy;
-    public static final PacketHandler packetPipeline = new PacketHandler();
+    public static SimpleNetworkWrapper network;
     public static final CreativeTabs machinaTab = new CreativeTabs("tabMachina") {
         @Override
         public Item getTabIconItem() {
@@ -41,6 +44,8 @@ public class Machina
     public void preInit(FMLPreInitializationEvent event) {
         LogHelper.init();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
+        network = NetworkRegistry.INSTANCE.newSimpleChannel("Machina");
+        network.registerMessage(PacketManualCrusher.Handle.class, PacketManualCrusher.class, 1, Side.SERVER);
     }
 
     @EventHandler
