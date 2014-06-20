@@ -10,7 +10,6 @@ import org.rebel.machina.items.ItemDust;
 import org.rebel.machina.items.ItemIngot;
 import org.rebel.machina.items.ItemNugget;
 import org.rebel.machina.util.LogHelper;
-import sun.rmi.runtime.Log;
 
 /**
  * Created by XVicarious on 6/16/2014.
