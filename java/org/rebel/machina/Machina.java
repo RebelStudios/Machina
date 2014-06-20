@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import org.rebel.machina.network.PacketManualCrusher;
+import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.proxy.MachinaProxy;
 import org.rebel.machina.recipe.ModRecipes;
 import org.rebel.machina.recipe.RecipeLists;
@@ -45,7 +45,7 @@ public class Machina
         LogHelper.init();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         network = NetworkRegistry.INSTANCE.newSimpleChannel("Machina");
-        network.registerMessage(PacketManualCrusher.Handle.class, PacketManualCrusher.class, 1, Side.SERVER);
+        network.registerMessage(MessageManualCrusher.Handle.class, MessageManualCrusher.class, 1, Side.SERVER);
     }
 
     @EventHandler

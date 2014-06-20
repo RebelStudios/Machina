@@ -1,14 +1,9 @@
 package org.rebel.machina.recipe;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import javafx.util.Pair;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.rebel.machina.ModBlocks;
-import org.rebel.machina.util.LogHelper;
 
 import java.util.ArrayList;
 
@@ -43,27 +38,13 @@ public class ManualCrusherRecipe {
     }
 
     public boolean isValidOre(Block input, int metadata) {
-        LogHelper.info(blockOreToString());
         ItemStack compareTo = new ItemStack(input, 1, metadata);
         for (ItemStack i : this.blockOre) {
-            //LogHelper.info(i.toString() + " == " + compareTo.toString());
             if (isOreEqual(compareTo, i)) {
-                //LogHelper.info("!");
                 return true;
             }
         }
-        //LogHelper.info(":(");
         return false;
-    }
-
-    public String blockOreToString() {
-        String s = "[";
-        for (ItemStack i : this.blockOre) {
-            s += i.toString();
-            s += ", ";
-        }
-        s += "]";
-        return s;
     }
 
     private boolean isOreEqual(ItemStack lhs, ItemStack rhs) {

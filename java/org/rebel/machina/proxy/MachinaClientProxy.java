@@ -1,6 +1,6 @@
 package org.rebel.machina.proxy;
 
-import org.rebel.machina.network.PacketManualCrusher;
+import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.util.LogHelper;
 
 /**
@@ -8,7 +8,7 @@ import org.rebel.machina.util.LogHelper;
  */
 public class MachinaClientProxy implements MachinaProxy {
     @Override
-    public void handleManualCrusher(PacketManualCrusher message) {
+    public void handleManualCrusher(MessageManualCrusher message) {
         LogHelper.info("Shouldn't be here?");
     }
 }
