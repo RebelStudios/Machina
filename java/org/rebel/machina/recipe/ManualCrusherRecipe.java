@@ -4,6 +4,7 @@ import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import org.rebel.machina.util.Util;
 
 import java.util.ArrayList;
 
@@ -26,12 +27,14 @@ public class ManualCrusherRecipe {
     public ManualCrusherRecipe(Object ore, int jumpsToCrush, Pair<ItemStack, Float>... outputs) {
         this.blockOre = new ArrayList<ItemStack>();
         if (ore instanceof Block) {
-            this.blockOre.add(new ItemStack((Block)ore, 1, 0));  // Bad Practice... Will remove.  Doesn't give any metadata
+            this.blockOre.add(new ItemStack((Block)ore, 1, 0));
         } else if (ore instanceof String) {
             this.blockOreString = (String)ore;
             for (ItemStack i : OreDictionary.getOres((String)ore)) {
                 this.blockOre.add(i);
             }
+        } else if (ore instanceof  ItemStack) {
+            this.blockOre.add((ItemStack)ore);
         }
         this.jumpsToCrush = jumpsToCrush;
         this.outputs = outputs;
@@ -40,16 +43,7 @@ public class ManualCrusherRecipe {
     public boolean isValidOre(Block input, int metadata) {
         ItemStack compareTo = new ItemStack(input, 1, metadata);
         for (ItemStack i : this.blockOre) {
-            if (isOreEqual(compareTo, i)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean isOreEqual(ItemStack lhs, ItemStack rhs) {
-        if (lhs.getItem() == rhs.getItem()) {
-            if (lhs.getItemDamage() == rhs.getItemDamage()) {
+            if (Util.isOreEqual(compareTo, i)) {
                 return true;
             }
         }

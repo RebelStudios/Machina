@@ -1,5 +1,7 @@
 package org.rebel.machina.util;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.Random;
 
 /**
@@ -15,6 +17,15 @@ public class Util {
     public static boolean checkChance(float chance) {
         float c = new Random().nextFloat();
         return c < chance;
+    }
+
+    public static boolean isOreEqual(ItemStack lhs, ItemStack rhs) {
+        if (lhs.getItem() == rhs.getItem()) {
+            if (lhs.getItemDamage() == rhs.getItemDamage()) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
