@@ -21,14 +21,17 @@ public class ModBlocks {
     public static Block blockManualCrusher;
     public static Block blockOre;
     public static Block blockMetal;
+    //public static Block blockBlastController;
 
     private static void makeBlocks() {
         machineWall = new BlockMachineWall().setBlockName("machina.machineWall").setBlockTextureName(Machina.MODID+":machineWall_0").setCreativeTab(Machina.machinaTab);
         machineCrusher = new BlockCrusher().setBlockName("machina.machineCrusher").setCreativeTab(Machina.machinaTab);
         machineCrusherCore = new BlockCrusherCore().setBlockName("machina.machineCrusherCore").setBlockTextureName(Machina.MODID + ":machineCrusherCore").setCreativeTab(Machina.machinaTab);
         blockManualCrusher = new BlockManualCrusher().setBlockName("machina.blockManualCrusher").setCreativeTab(Machina.machinaTab);
+        blockManualCrusher.slipperiness = 69.0f;
         blockOre = new BlockOre().setBlockName("machina.blockOre").setCreativeTab(Machina.machinaTab);
         blockMetal = new BlockMetal().setBlockName("machina.blockMetal").setCreativeTab(Machina.machinaTab);
+        //blockBlastController = new BlockBlastFurnace().setBlockName("machina.blockBlastController").setCreativeTab(Machina.machinaTab);
     }
 
     private static void oreRegister() {
@@ -50,6 +53,7 @@ public class ModBlocks {
         GameRegistry.registerBlock(blockManualCrusher,"machina.blockManualCrusher");
         GameRegistry.registerBlock(blockOre, ItemBlockOre.class,"machina.blockOre");
         GameRegistry.registerBlock(blockMetal, ItemBlockMetal.class, "machina.blockMetal");
+        //GameRegistry.registerBlock(blockBlastController, "machina.blockBlastController");
         oreRegister();
     }
 
