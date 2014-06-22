@@ -19,4 +19,8 @@ public class LogHelper {
         logger.log(Level.INFO, message);
     }
 
+    public static void mbInfo(String message, Object... ob) {
+        logger.log(Level.INFO, "[Machina-Multiblock] " + message, ob);
+    }
+
 }

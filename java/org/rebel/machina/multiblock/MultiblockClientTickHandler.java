@@ -2,10 +2,10 @@ package org.rebel.machina.multiblock;
 
 import java.util.EnumSet;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
-import cpw.mods.fml.common.IScheduledTickHandler;
-import cpw.mods.fml.common.TickType;
-
+/*
 public class MultiblockClientTickHandler implements IScheduledTickHandler {
 
 	@Override
@@ -37,4 +37,16 @@ public class MultiblockClientTickHandler implements IScheduledTickHandler {
 		return 1;
 	}
 
+}
+*/
+
+public class MultiblockClientTickHandler {
+    @SubscribeEvent
+    public void onClientTick(TickEvent.ClientTickEvent event) {
+        if (event.phase == TickEvent.Phase.START) {
+            MultiblockRegistry.tickStart(Minecraft.getMinecraft().theWorld);
+        } else if (event.phase == TickEvent.Phase.END) {
+            MultiblockRegistry.tickEnd(Minecraft.getMinecraft().theWorld);
+        }
+    }
 }

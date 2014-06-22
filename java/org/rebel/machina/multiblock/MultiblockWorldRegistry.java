@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import org.rebel.machina.util.BeefCoreLog;
 import org.rebel.machina.util.CoordTriplet;
+import org.rebel.machina.util.LogHelper;
 
 /**
  * This class manages all the multiblock controllers that exist in a given world,
@@ -191,7 +192,7 @@ public class MultiblockWorldRegistry {
 				}
 				
 				if(newMaster == null) {
-					BeefCoreLog.severe("Multiblock system checked a merge pool of size %d, found no master candidates. This should never happen.", mergePool.size());
+                    LogHelper.mbInfo("Multiblock system checked a merge pool of size %d, found no master candidates. This should never happen.", mergePool.size());
 				}
 				else {
 					// Merge all the other machines into the master machine, then unregister them
@@ -242,7 +243,7 @@ public class MultiblockWorldRegistry {
 				// Go through any controllers which have marked themselves as potentially dead.
 				// Validate that they are empty/dead, then unregister them.
 				if(!controller.isEmpty()) {
-					BeefCoreLog.severe("Found a non-empty controller. Forcing it to shed its blocks and die. This should never happen!");
+                    LogHelper.mbInfo("Found a non-empty controller. Forcing it to shed its blocks and die. This should never happen!");
 					detachedParts.addAll(controller.detachAllBlocks());
 				}
 

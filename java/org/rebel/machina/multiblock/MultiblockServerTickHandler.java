@@ -2,10 +2,10 @@ package org.rebel.machina.multiblock;
 
 import java.util.EnumSet;
 
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
+import net.minecraft.client.Minecraft;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.IScheduledTickHandler;
-import cpw.mods.fml.common.TickType;
-
 /**
  * This is a generic multiblock tick handler. If you are using this code on your own,
  * you will need to register this with the Forge TickRegistry on both the
@@ -15,6 +15,7 @@ import cpw.mods.fml.common.TickType;
  * SERVER and WORLD ticks only run on the server.
  * WORLDLOAD ticks run only on the server, and only when worlds are loaded.
  */
+/*
 public class MultiblockServerTickHandler implements IScheduledTickHandler {
 
 	@Override
@@ -48,3 +49,16 @@ public class MultiblockServerTickHandler implements IScheduledTickHandler {
 		return 1;
 	}
 }
+*/
+
+public class MultiblockServerTickHandler {
+    @SubscribeEvent
+    public void onServerTick(TickEvent.ServerTickEvent event) {
+        if (event.phase == TickEvent.Phase.START) {
+            MultiblockRegistry.tickStart(Minecraft.getMinecraft().theWorld);
+        } else if (event.phase == TickEvent.Phase.END) {
+            MultiblockRegistry.tickEnd(Minecraft.getMinecraft().theWorld);
+        }
+    }
+}
+

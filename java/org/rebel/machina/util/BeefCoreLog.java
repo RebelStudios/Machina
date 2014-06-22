@@ -9,12 +9,14 @@ public class BeefCoreLog {
 	private static final String LOGCHANNEL = "BeefCore";
 	
 	public BeefCoreLog() {
-		FMLLog.makeLog(LOGCHANNEL);
+		//FMLLog.makeLog(LOGCHANNEL);
+        return;
 	}
 	
     public static void log(Level level, String format, Object... data)
     {
-    	FMLLog.log(LOGCHANNEL, level,  format, data);
+    	//FMLLog.log(LOGCHANNEL, level,  format, data);
+        return;
     }
 
     public static void severe(String format, Object... data)

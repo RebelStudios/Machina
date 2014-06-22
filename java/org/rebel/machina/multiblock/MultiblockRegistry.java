@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import net.minecraft.world.World;
 import org.rebel.machina.util.BeefCoreLog;
+import org.rebel.machina.util.LogHelper;
 
 /**
  * This is a very static singleton registry class which directs incoming events to sub-objects, which
@@ -110,7 +111,7 @@ public class MultiblockRegistry {
 			registries.get(world).addDeadController(controller);
 		}
 		else {
-			BeefCoreLog.warning("Controller %d in world %s marked as dead, but that world is not tracked! Controller is being ignored.", controller.hashCode(), world);
+            LogHelper.mbInfo("Controller %d in world %s marked as dead, but that world is not tracked! Controller is being ignored.", controller.hashCode(), world);
 		}
 	}
 	

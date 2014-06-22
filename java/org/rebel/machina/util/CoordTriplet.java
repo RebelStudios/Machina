@@ -1,7 +1,7 @@
 package org.rebel.machina.util;
 
 import net.minecraft.world.ChunkCoordIntPair;
-import net.minecraftforge.common.ForgeDirection;
+import net.minecraftforge.common.util.ForgeDirection;
 
 /*
  * Simple wrapper class for XYZ coordinates.
