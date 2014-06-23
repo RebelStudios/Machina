@@ -3,7 +3,7 @@ package org.rebel.machina.items;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 /**
  * Created by XVicarious on 6/22/2014.
@@ -22,7 +22,7 @@ public class ItemBlockBlastFurnacePart extends ItemBlock {
 
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
-        return getUnlocalizedName() + "." + ModNames.blockBFPart[itemStack.getItemDamage()];
+        return getUnlocalizedName() + "." + MachinaNames.blockBFPart[itemStack.getItemDamage()];
     }
 
 }

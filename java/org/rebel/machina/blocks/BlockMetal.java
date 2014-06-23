@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import org.rebel.machina.Machina;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class BlockMetal extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List subItems) {
-        for (int i = 0; i < ModNames.blockMetalNames.length; i++) {
+        for (int i = 0; i < MachinaNames.blockMetalNames.length; i++) {
             subItems.add(new ItemStack(this, 1, i));
         }
     }
@@ -37,9 +37,9 @@ public class BlockMetal extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        icons = new IIcon[ModNames.blockMetalNames.length];
+        icons = new IIcon[MachinaNames.blockMetalNames.length];
         for (int i = 0; i < icons.length; i++) {
-            icons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.blockMetalNames[i]);
+            icons[i] = ir.registerIcon(Machina.MODID + ":" + MachinaNames.blockMetalNames[i]);
         }
     }
 

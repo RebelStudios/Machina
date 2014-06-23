@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import org.rebel.machina.Machina;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 import java.util.List;
 import java.util.Random;
@@ -31,7 +31,7 @@ public class BlockOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List subItems) {
-        for (int i = 0; i < ModNames.blockOreNames.length; i++) {
+        for (int i = 0; i < MachinaNames.blockOreNames.length; i++) {
             subItems.add(new ItemStack(this, 1, i));
         }
     }
@@ -39,9 +39,9 @@ public class BlockOre extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        icons = new IIcon[ModNames.blockOreNames.length];
+        icons = new IIcon[MachinaNames.blockOreNames.length];
         for (int i = 0; i < icons.length; i++) {
-            icons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.blockOreNames[i]);
+            icons[i] = ir.registerIcon(Machina.MODID + ":" + MachinaNames.blockOreNames[i]);
         }
     }
 

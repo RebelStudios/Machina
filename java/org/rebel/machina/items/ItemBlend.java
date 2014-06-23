@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import org.rebel.machina.Machina;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 import java.util.List;
 
@@ -29,9 +29,9 @@ public class ItemBlend extends Item {
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        itemIcons = new IIcon[ModNames.itemBlendStrings.length];
+        itemIcons = new IIcon[MachinaNames.itemBlendStrings.length];
         for (int i = 0; i < itemIcons.length; i++) {
-            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + ModNames.itemBlendStrings[i]);
+            itemIcons[i] = ir.registerIcon(Machina.MODID + ":" + MachinaNames.itemBlendStrings[i]);
         }
     }
 
@@ -41,14 +41,14 @@ public class ItemBlend extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, ModNames.itemBlendStrings.length-1);
-        return "item." + ModNames.itemBlendStrings[i];
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemBlendStrings.length-1);
+        return "item." + MachinaNames.itemBlendStrings[i];
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item par1, CreativeTabs creativeTab, List par3) {
-        for (int x = 0; x < ModNames.itemBlendStrings.length; x++) {
+        for (int x = 0; x < MachinaNames.itemBlendStrings.length; x++) {
             par3.add(new ItemStack(this, 1, x));
         }
     }

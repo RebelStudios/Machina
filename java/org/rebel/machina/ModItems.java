@@ -4,7 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 import org.rebel.machina.items.ItemBlend;
 import org.rebel.machina.items.ItemDust;
 import org.rebel.machina.items.ItemIngot;
@@ -29,16 +29,16 @@ public class ModItems {
     }
 
     private static void oreRegister() {
-        for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
-            OreDictionary.registerOre(ModNames.itemIngotStrings[i], new ItemStack(itemIngot, 1, i));
+        for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
+            OreDictionary.registerOre(MachinaNames.itemIngotStrings[i], new ItemStack(itemIngot, 1, i));
         }
         MachinaLog.info("Registered: Ingots");
-        for (int i = 0; i < ModNames.itemNuggetStrings.length; i++) {
-            OreDictionary.registerOre(ModNames.itemNuggetStrings[i], new ItemStack(itemNugget, 1, i));
+        for (int i = 0; i < MachinaNames.itemNuggetStrings.length; i++) {
+            OreDictionary.registerOre(MachinaNames.itemNuggetStrings[i], new ItemStack(itemNugget, 1, i));
         }
         MachinaLog.info("Registered: Nuggets");
-        for (int i = 0; i < ModNames.itemDustStrings.length; i++) {
-            OreDictionary.registerOre(ModNames.itemDustStrings[i], new ItemStack(itemDust, 1, i));
+        for (int i = 0; i < MachinaNames.itemDustStrings.length; i++) {
+            OreDictionary.registerOre(MachinaNames.itemDustStrings[i], new ItemStack(itemDust, 1, i));
         }
         MachinaLog.info("Registered: Dusts");
     }

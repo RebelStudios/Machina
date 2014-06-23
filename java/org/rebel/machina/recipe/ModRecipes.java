@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import org.rebel.machina.ModBlocks;
 import org.rebel.machina.ModItems;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 /**
  * Created by bmaurer on 6/17/2014.
@@ -22,34 +22,34 @@ public class ModRecipes {
     }
 
     public static void addSingleIngotRecipes() {
-        for (int i = 0; i < ModNames.blockOreNames.length; i++) {
+        for (int i = 0; i < MachinaNames.blockOreNames.length; i++) {
             GameRegistry.addSmelting(new ItemStack(ModBlocks.blockOre, 1, i), new ItemStack(ModItems.itemIngot, 1, i), 0.5f);
         }
-        for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
+        for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
             GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, i), new ItemStack(ModItems.itemIngot, 1, i), 0.5f);
         }
-        for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.itemIngot, 1, i), new Object[] {ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],ModNames.itemNuggetStrings[i],}));
+        for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.itemIngot, 1, i), new Object[] {MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i],}));
         }
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, ModNames.itemDustStrings.length-1), new ItemStack(Items.iron_ingot), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, ModNames.itemDustStrings.length-2), new ItemStack(Items.gold_ingot), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, MachinaNames.itemDustStrings.length-1), new ItemStack(Items.iron_ingot), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemDust, 1, MachinaNames.itemDustStrings.length-2), new ItemStack(Items.gold_ingot), 0.5f);
         /* Blends */
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 0), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotElectrum")), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 1), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotBronze")), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 2), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotInvar")), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 3), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotSolder")), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 4), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(ModNames.itemIngotStrings).indexOf("ingotBrass")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 0), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotElectrum")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 1), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotBronze")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 2), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotInvar")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 3), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotSolder")), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(ModItems.itemBlend, 1, 4), new ItemStack(ModItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotBrass")), 0.5f);
     }
 
     public static void addNuggetRecipes() {
-        for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.itemNugget, 9, i), ModNames.itemIngotStrings[i]));
+        for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModItems.itemNugget, 9, i), MachinaNames.itemIngotStrings[i]));
         }
     }
 
     public static void addMetalBlockRecipes() {
-        for (int i = 0; i < ModNames.blockMetalNames.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.blockMetal, 1, i), new Object[] {ModNames.itemIngotStrings[i], ModNames.itemIngotStrings[i],ModNames.itemIngotStrings[i],ModNames.itemIngotStrings[i],ModNames.itemIngotStrings[i],ModNames.itemIngotStrings[i], ModNames.itemIngotStrings[i], ModNames.itemIngotStrings[i], ModNames.itemIngotStrings[i]}));
+        for (int i = 0; i < MachinaNames.blockMetalNames.length; i++) {
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.blockMetal, 1, i), new Object[] {MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i]}));
         }
     }
 

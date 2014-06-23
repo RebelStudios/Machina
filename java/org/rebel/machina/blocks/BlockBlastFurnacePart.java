@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class BlockBlastFurnacePart extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List subItems)     {
-        for (int i = 0; i < ModNames.blockBFPart.length; i++) {
+        for (int i = 0; i < MachinaNames.blockBFPart.length; i++) {
             subItems.add(new ItemStack(this, 1, i));
         }
     }

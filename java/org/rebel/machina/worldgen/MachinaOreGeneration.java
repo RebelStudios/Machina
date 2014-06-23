@@ -7,7 +7,7 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import org.rebel.machina.ModBlocks;
 import org.rebel.machina.info.MachinaInfo;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 
 import java.util.Random;
 
@@ -26,7 +26,7 @@ public class MachinaOreGeneration implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int chunkX, int chunkZ) {
-        for (int j = 0; j < ModNames.blockOreNames.length; j++) {
+        for (int j = 0; j < MachinaNames.blockOreNames.length; j++) {
             for (int i = 0; i < 30; i++) {
                 int randPosX = chunkX + random.nextInt(16);
                 int randPosY = random.nextInt(64);

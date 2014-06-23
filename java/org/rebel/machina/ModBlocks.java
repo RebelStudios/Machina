@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import org.rebel.machina.blocks.*;
-import org.rebel.machina.info.ModNames;
+import org.rebel.machina.info.MachinaNames;
 import org.rebel.machina.items.ItemBlockBlastFurnacePart;
 import org.rebel.machina.items.ItemBlockMetal;
 import org.rebel.machina.items.ItemBlockOre;
@@ -40,12 +40,12 @@ public class ModBlocks {
     }
 
     private static void oreRegister() {
-        for (int i = 0; i < ModNames.blockOreNames.length; i++) {
-            OreDictionary.registerOre(ModNames.blockOreNames[i], new ItemStack(blockOre, 1, i));
+        for (int i = 0; i < MachinaNames.blockOreNames.length; i++) {
+            OreDictionary.registerOre(MachinaNames.blockOreNames[i], new ItemStack(blockOre, 1, i));
         }
         MachinaLog.info("Registered: Ores");
-        for (int i = 0; i < ModNames.blockMetalNames.length; i++) {
-            OreDictionary.registerOre(ModNames.blockMetalNames[i], new ItemStack(blockMetal, 1, i));
+        for (int i = 0; i < MachinaNames.blockMetalNames.length; i++) {
+            OreDictionary.registerOre(MachinaNames.blockMetalNames[i], new ItemStack(blockMetal, 1, i));
         }
         MachinaLog.info("Registered: Metal Blocks");
     }
