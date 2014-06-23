@@ -11,7 +11,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import org.rebel.machina.util.BeefCoreLog;
 import org.rebel.machina.util.CoordTriplet;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * This class contains the base logic for "multiblock controllers". Conceptually, they are
@@ -111,7 +111,7 @@ public abstract class MultiblockControllerBase {
 		CoordTriplet coord = part.getWorldLocation();
 
 		if(!connectedParts.add(part)) {
-            LogHelper.mbInfo("[%s] Controller %s is double-adding part %d @ %s. This is unusual. If you encounter odd behavior, please tear down the machine and rebuild it.", (worldObj.isRemote ? "CLIENT" : "SERVER"), hashCode(), part.hashCode(), coord);
+            MachinaLog.mbInfo("[%s] Controller %s is double-adding part %d @ %s. This is unusual. If you encounter odd behavior, please tear down the machine and rebuild it.", (worldObj.isRemote ? "CLIENT" : "SERVER"), hashCode(), part.hashCode(), coord);
 		}
 		
 		part.onAttached(this);
@@ -222,7 +222,7 @@ public abstract class MultiblockControllerBase {
 		// Strip out this part
 		onDetachBlock(part);
 		if(!connectedParts.remove(part)) {
-            LogHelper.mbInfo("[%s] Double-removing part (%d) @ %d, %d, %d, this is unexpected and may cause problems. If you encounter anomalies, please tear down the reactor and rebuild it.", worldObj.isRemote?"CLIENT":"SERVER", part.hashCode(), part.xCoord, part.yCoord, part.zCoord);
+            MachinaLog.mbInfo("[%s] Double-removing part (%d) @ %d, %d, %d, this is unexpected and may cause problems. If you encounter anomalies, please tear down the reactor and rebuild it.", worldObj.isRemote ? "CLIENT" : "SERVER", part.hashCode(), part.xCoord, part.yCoord, part.zCoord);
 		}
 
 		if(connectedParts.isEmpty()) {
@@ -637,7 +637,7 @@ public abstract class MultiblockControllerBase {
 		else if(res > 0) { return false; }
 		else {
 			// Strip dead parts from both and retry
-            LogHelper.mbInfo("[%s] Encountered two controllers with the same reference coordinate. Auditing connected parts and retrying.", worldObj.isRemote ? "CLIENT" : "SERVER");
+            MachinaLog.mbInfo("[%s] Encountered two controllers with the same reference coordinate. Auditing connected parts and retrying.", worldObj.isRemote ? "CLIENT" : "SERVER");
 			auditParts();
 			otherController.auditParts();
 			
@@ -645,8 +645,8 @@ public abstract class MultiblockControllerBase {
 			if(res < 0) { return true; }
 			else if(res > 0) { return false; }
 			else {
-                LogHelper.mbInfo("My Controller (%d): size (%d), parts: %s", hashCode(), connectedParts.size(), getPartsListString());
-                LogHelper.mbInfo("Other Controller (%d): size (%d), coords: %s", otherController.hashCode(), otherController.connectedParts.size(), otherController.getPartsListString());
+                MachinaLog.mbInfo("My Controller (%d): size (%d), parts: %s", hashCode(), connectedParts.size(), getPartsListString());
+                MachinaLog.mbInfo("Other Controller (%d): size (%d), coords: %s", otherController.hashCode(), otherController.connectedParts.size(), otherController.getPartsListString());
 				throw new IllegalArgumentException("[" + (worldObj.isRemote?"CLIENT":"SERVER") + "] Two controllers with the same reference coord that somehow both have valid parts - this should never happen!"); 
 			}
 

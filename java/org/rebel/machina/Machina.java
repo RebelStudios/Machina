@@ -19,7 +19,7 @@ import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.tileentity.TEBlastFurnace;
 import org.rebel.machina.tileentity.TEToughBrick;
 import org.rebel.machina.util.ConfigHandler;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.worldgen.MachinaOreGeneration;
 
 /**
@@ -44,7 +44,7 @@ public class Machina
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.init();
+        MachinaLog.init();
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         network = NetworkRegistry.INSTANCE.newSimpleChannel("Machina");
         network.registerMessage(MessageManualCrusher.Handle.class, MessageManualCrusher.class, 1, Side.SERVER);

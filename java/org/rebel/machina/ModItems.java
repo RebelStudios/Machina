@@ -9,7 +9,7 @@ import org.rebel.machina.items.ItemBlend;
 import org.rebel.machina.items.ItemDust;
 import org.rebel.machina.items.ItemIngot;
 import org.rebel.machina.items.ItemNugget;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/16/2014.
@@ -32,15 +32,15 @@ public class ModItems {
         for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemIngotStrings[i], new ItemStack(itemIngot, 1, i));
         }
-        LogHelper.info("Registered: Ingots");
+        MachinaLog.info("Registered: Ingots");
         for (int i = 0; i < ModNames.itemNuggetStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemNuggetStrings[i], new ItemStack(itemNugget, 1, i));
         }
-        LogHelper.info("Registered: Nuggets");
+        MachinaLog.info("Registered: Nuggets");
         for (int i = 0; i < ModNames.itemDustStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemDustStrings[i], new ItemStack(itemDust, 1, i));
         }
-        LogHelper.info("Registered: Dusts");
+        MachinaLog.info("Registered: Dusts");
     }
 
     public static void registerItems() {

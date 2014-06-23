@@ -1,7 +1,6 @@
 package org.rebel.machina.multiblock;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import org.rebel.machina.ModBlocks;
@@ -11,8 +10,7 @@ import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockControllerBase;
-import org.rebel.machina.tileentity.TEBlastFurnace;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.util.Util;
 
 import java.util.Set;
@@ -58,7 +56,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onMachineAssembled() {
-        LogHelper.mbInfo("Assembled!");
+        MachinaLog.mbInfo("Assembled!");
     }
 
     @Override

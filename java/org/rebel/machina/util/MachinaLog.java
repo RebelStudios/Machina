@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class LogHelper {
+public class MachinaLog {
 
     private static Logger logger;
 

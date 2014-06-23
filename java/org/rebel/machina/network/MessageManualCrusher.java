@@ -9,7 +9,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/16/2014.
@@ -57,9 +57,9 @@ public class MessageManualCrusher implements IMessage {
             int yCoord = message.y;
             int zCoord = message.z;
             ItemStack i = message.i;
-            LogHelper.info("Setting block to air.");
+            MachinaLog.info("Setting block to air.");
             worldObj.setBlockToAir(xCoord, yCoord - 1, zCoord);
-            LogHelper.info("Spawning item.");
+            MachinaLog.info("Spawning item.");
             EntityItem ei = new EntityItem(worldObj, xCoord, yCoord - 1, zCoord, i);
             worldObj.spawnEntityInWorld(ei);
             return null;

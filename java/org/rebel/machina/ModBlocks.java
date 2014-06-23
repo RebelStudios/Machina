@@ -8,7 +8,7 @@ import org.rebel.machina.blocks.*;
 import org.rebel.machina.info.ModNames;
 import org.rebel.machina.items.ItemBlockMetal;
 import org.rebel.machina.items.ItemBlockOre;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/16/2014.
@@ -40,11 +40,11 @@ public class ModBlocks {
         for (int i = 0; i < ModNames.blockOreNames.length; i++) {
             OreDictionary.registerOre(ModNames.blockOreNames[i], new ItemStack(blockOre, 1, i));
         }
-        LogHelper.info("Registered: Ores");
+        MachinaLog.info("Registered: Ores");
         for (int i = 0; i < ModNames.blockMetalNames.length; i++) {
             OreDictionary.registerOre(ModNames.blockMetalNames[i], new ItemStack(blockMetal, 1, i));
         }
-        LogHelper.info("Registered: Metal Blocks");
+        MachinaLog.info("Registered: Metal Blocks");
     }
 
     public static void registerBlocks() {

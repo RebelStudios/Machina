@@ -12,7 +12,7 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.chunk.IChunkProvider;
 import org.rebel.machina.util.CoordTriplet;
-import org.rebel.machina.util.LogHelper;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * Base logic class for Multiblock-connected tile entities. Most multiblock machines
@@ -76,7 +76,7 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 	@Override
 	public void assertDetached() {
 		if(this.controller != null) {
-			LogHelper.mbInfo("[assert] Part @ (%d, %d, %d) should be detached already, but detected that it was not. This is not a fatal error, and will be repaired, but is unusual.", xCoord, yCoord, zCoord);
+			MachinaLog.mbInfo("[assert] Part @ (%d, %d, %d) should be detached already, but detected that it was not. This is not a fatal error, and will be repaired, but is unusual.", xCoord, yCoord, zCoord);
 			this.controller = null;
 		}
 	}
