@@ -1,6 +1,8 @@
 package org.rebel.machina.util;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.Random;
 
@@ -19,11 +21,32 @@ public class Util {
         return c < chance;
     }
 
-    public static boolean isOreEqual(ItemStack lhs, ItemStack rhs) {
+    /**
+     * Checks if both itemstacks contain the same block/item, true if so, false if not
+     * @param lhs the first itemstack
+     * @param rhs the second itemstack
+     * @return true if blocks/items in the itemstack are the same, false if they are not
+     */
+    public static boolean isItemEqual(ItemStack lhs, ItemStack rhs) {
         if (lhs.getItem() == rhs.getItem()) {
             if (lhs.getItemDamage() == rhs.getItemDamage()) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    /**
+     * Checks if the block occupying the space is air
+     * @param world the world to check in
+     * @param x the x coordinate of the block
+     * @param y the y coordinate of the block
+     * @param z the z coordinate of the block
+     * @return If the block is in fact air, true.  If not false
+     */
+    public static boolean isBlockAir(World world, int x, int y, int z) {
+        if (world.getBlock(x, y, z) == Blocks.air) {
+            return true;
         }
         return false;
     }

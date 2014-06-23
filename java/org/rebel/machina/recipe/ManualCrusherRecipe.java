@@ -43,7 +43,7 @@ public class ManualCrusherRecipe {
     public boolean isValidOre(Block input, int metadata) {
         ItemStack compareTo = new ItemStack(input, 1, metadata);
         for (ItemStack i : this.blockOre) {
-            if (Util.isOreEqual(compareTo, i)) {
+            if (Util.isItemEqual(compareTo, i)) {
                 return true;
             }
         }
