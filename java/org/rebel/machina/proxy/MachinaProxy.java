@@ -7,6 +7,8 @@ import org.rebel.machina.network.MessageManualCrusher;
  */
 public interface MachinaProxy {
 
+    void init();
+
     void handleManualCrusher(MessageManualCrusher message);
 
 }

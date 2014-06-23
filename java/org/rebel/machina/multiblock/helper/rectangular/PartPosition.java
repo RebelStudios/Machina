@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock.rectangular;
+package org.rebel.machina.multiblock.helper.rectangular;
 
 public enum PartPosition {
 	Unknown,

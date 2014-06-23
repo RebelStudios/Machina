@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 /**
  * An exception thrown when trying to validate a multiblock. Requires a string describing why the multiblock

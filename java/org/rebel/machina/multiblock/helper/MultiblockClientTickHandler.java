@@ -1,9 +1,8 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
-import org.rebel.machina.util.LogHelper;
 
 public class MultiblockClientTickHandler {
     @SubscribeEvent

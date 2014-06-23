@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -9,7 +9,7 @@ import net.minecraft.block.material.Material;
  */
 public abstract class BlockMultiblockBase extends BlockContainer {
 
-	protected BlockMultiblockBase(int par1, Material par2Material) {
-		super(par2Material);
+	protected BlockMultiblockBase(Material material) {
+		super(material);
 	}
 }

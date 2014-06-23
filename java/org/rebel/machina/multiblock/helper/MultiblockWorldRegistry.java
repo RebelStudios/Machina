@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +11,6 @@ import java.util.Set;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import org.rebel.machina.util.BeefCoreLog;
 import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.util.LogHelper;
 

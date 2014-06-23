@@ -1,17 +1,13 @@
 package org.rebel.machina.tileentity;
 
-import net.minecraft.tileentity.TileEntity;
 import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
 
 /**
- * Created by XVicarious on 6/21/2014.
-*/
-public class TEBlastFurnace extends MultiblockTileEntityBase {
-
-    public TEBlastFurnace() {
-    }
+ * Created by XVicarious on 6/22/2014.
+ */
+public class TEToughBrick extends MultiblockTileEntityBase {
 
     @Override
     public void onMachineAssembled(MultiblockControllerBase multiblockControllerBase) {

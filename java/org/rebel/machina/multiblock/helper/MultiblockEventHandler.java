@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;

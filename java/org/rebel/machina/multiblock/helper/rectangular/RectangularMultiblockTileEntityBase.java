@@ -1,10 +1,10 @@
-package org.rebel.machina.multiblock.rectangular;
+package org.rebel.machina.multiblock.helper.rectangular;
 
 import net.minecraftforge.common.util.ForgeDirection;
 import org.rebel.machina.util.CoordTriplet;
-import org.rebel.machina.multiblock.MultiblockControllerBase;
-import org.rebel.machina.multiblock.MultiblockTileEntityBase;
-import org.rebel.machina.multiblock.MultiblockValidationException;
+import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
+import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
+import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 
 public abstract class RectangularMultiblockTileEntityBase extends MultiblockTileEntityBase {
 

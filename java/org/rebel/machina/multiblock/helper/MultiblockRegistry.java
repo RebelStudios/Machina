@@ -1,9 +1,8 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import java.util.HashMap;
 
 import net.minecraft.world.World;
-import org.rebel.machina.util.BeefCoreLog;
 import org.rebel.machina.util.LogHelper;
 
 /**

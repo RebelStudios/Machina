@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import java.util.Set;
 
@@ -12,7 +12,7 @@ import org.rebel.machina.util.CoordTriplet;
  * Preferably, you should derive from MultiblockTileEntityBase,
  * which does all the hard work for you.
  * 
- * {@link org.rebel.machina.multiblock.MultiblockTileEntityBase}
+ * {@link MultiblockTileEntityBase}
  */
 public abstract class IMultiblockPart extends TileEntity {
 	public static final int INVALID_DISTANCE = Integer.MAX_VALUE;

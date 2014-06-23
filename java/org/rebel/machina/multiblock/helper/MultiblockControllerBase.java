@@ -1,4 +1,4 @@
-package org.rebel.machina.multiblock;
+package org.rebel.machina.multiblock.helper;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -432,7 +432,7 @@ public abstract class MultiblockControllerBase {
 	/**
 	 * Driver for the update loop. If the machine is assembled, runs
 	 * the game logic update method.
-	 * //@see org.rebel.machina.multiblock.MultiblockControllerBase#update()
+	 * //@see org.rebel.machina.multiblock.helper.MultiblockControllerBase#update()
 	 */
 	public final void updateMultiblockEntity() {
 		if(connectedParts.isEmpty()) {
