@@ -5,7 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import org.rebel.machina.MachinaItems;
-import org.rebel.machina.ModBlocks;
+import org.rebel.machina.MachinaBlocks;
 import org.rebel.machina.info.MachinaNames;
 
 /**
@@ -23,7 +23,7 @@ public class ModRecipes {
 
     public static void addSingleIngotRecipes() {
         for (int i = 0; i < MachinaNames.blockOreNames.length; i++) {
-            GameRegistry.addSmelting(new ItemStack(ModBlocks.blockOre, 1, i), new ItemStack(MachinaItems.itemIngot, 1, i), 0.5f);
+            GameRegistry.addSmelting(new ItemStack(MachinaBlocks.blockOre, 1, i), new ItemStack(MachinaItems.itemIngot, 1, i), 0.5f);
         }
         for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
             GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, i), new ItemStack(MachinaItems.itemIngot, 1, i), 0.5f);
@@ -49,7 +49,7 @@ public class ModRecipes {
 
     public static void addMetalBlockRecipes() {
         for (int i = 0; i < MachinaNames.blockMetalNames.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.blockMetal, 1, i), new Object[] {MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i]}));
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaBlocks.blockMetal, 1, i), new Object[] {MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i]}));
         }
     }
 

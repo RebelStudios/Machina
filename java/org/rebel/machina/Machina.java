@@ -51,7 +51,7 @@ public class Machina
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        ModBlocks.registerBlocks();
+        MachinaBlocks.registerBlocks();
         MachinaItems.registerItems();
         addRecipes();
         GameRegistry.registerTileEntity(TEBlastFurnacePart.class, "TEBlastFurnacePart");

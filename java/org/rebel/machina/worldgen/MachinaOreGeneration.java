@@ -5,7 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import org.rebel.machina.ModBlocks;
+import org.rebel.machina.MachinaBlocks;
 import org.rebel.machina.info.MachinaInfo;
 import org.rebel.machina.info.MachinaNames;
 
@@ -31,7 +31,7 @@ public class MachinaOreGeneration implements IWorldGenerator {
                 int randPosX = chunkX + random.nextInt(16);
                 int randPosY = random.nextInt(64);
                 int randPosZ = chunkZ + random.nextInt(16);
-                (new WorldGenMinable(ModBlocks.blockOre, j, MachinaInfo.oreGenerationSize[j], Blocks.stone)).generate(world, random, randPosX, randPosY, randPosZ); //ModBlocks.blockOre
+                (new WorldGenMinable(MachinaBlocks.blockOre, j, MachinaInfo.oreGenerationSize[j], Blocks.stone)).generate(world, random, randPosX, randPosY, randPosZ); //MachinaBlocks.blockOre
             }
         }
     }

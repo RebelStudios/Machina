@@ -14,7 +14,7 @@ import org.rebel.machina.util.MachinaLog;
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class ModBlocks {
+public class MachinaBlocks {
 
     public static Block machineWall;
     public static Block machineCrusherCore;
