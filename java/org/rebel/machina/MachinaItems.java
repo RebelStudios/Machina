@@ -14,7 +14,7 @@ import org.rebel.machina.util.MachinaLog;
 /**
  * Created by XVicarious on 6/16/2014.
  */
-public class ModItems {
+public class MachinaItems {
 
     public static Item itemIngot;
     public static Item itemBlend;
