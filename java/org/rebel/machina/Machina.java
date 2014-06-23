@@ -17,6 +17,7 @@ import org.rebel.machina.proxy.MachinaProxy;
 import org.rebel.machina.recipe.ModRecipes;
 import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.tileentity.TEBlastFurnace;
+import org.rebel.machina.tileentity.TEBlastFurnacePart;
 import org.rebel.machina.tileentity.TEToughBrick;
 import org.rebel.machina.util.ConfigHandler;
 import org.rebel.machina.util.MachinaLog;
@@ -55,8 +56,7 @@ public class Machina
         ModBlocks.registerBlocks();
         ModItems.registerItems();
         addRecipes();
-        GameRegistry.registerTileEntity(TEToughBrick.class, "TEToughBrick");
-        GameRegistry.registerTileEntity(TEBlastFurnace.class, "TEBlastFurnace");
+        GameRegistry.registerTileEntity(TEBlastFurnacePart.class, "TEBlastFurnacePart");
         GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
     }
 

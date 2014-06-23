@@ -10,6 +10,7 @@ import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockControllerBase;
+import org.rebel.machina.tileentity.TEBlastFurnacePart;
 import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.util.Util;
 
@@ -41,8 +42,8 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onBlockAdded(IMultiblockPart newPart) {
-        if (newPart instanceof MultiblockTileEntityBase) {
-            MultiblockTileEntityBase teb = (MultiblockTileEntityBase)newPart;
+        if (newPart instanceof TEBlastFurnacePart) {
+            TEBlastFurnacePart teb = (TEBlastFurnacePart)newPart;
             if (BlockBlastFurnacePart.isController(teb.getBlockMetadata())) {
                 attachedControllers.add(teb);
             }
@@ -132,40 +133,6 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     @Override
     public void decodeDescriptionPacket(NBTTagCompound data) {
 
-    }
-
-    private void isBlockGood(World world, int x, int y, int z) throws MultiblockValidationException {
-        Block block = world.getBlock(x, y, z);
-        if (block == ModBlocks.blockToughBrick) {
-            return;
-        } else {
-            throw new MultiblockValidationException("no");
-        }
-    }
-
-    @Override
-    protected void isBlockGoodForFrame(World world, int x, int y, int z) throws MultiblockValidationException {
-        isBlockGood(world, x, y, z);
-    }
-
-    @Override
-    protected void isBlockGoodForTop(World world, int x, int y, int z) throws MultiblockValidationException {
-        isBlockGood(world, x, y, z);
-    }
-
-    @Override
-    protected void isBlockGoodForBottom(World world, int x, int y, int z) throws MultiblockValidationException {
-        isBlockGood(world, x, y, z);
-    }
-
-    @Override
-    protected void isBlockGoodForSides(World world, int x, int y, int z) throws MultiblockValidationException {
-        Block block = world.getBlock(x, y, z);
-        if (block == ModBlocks.blockBlastController || block == ModBlocks.blockToughBrick) {
-            return;
-        } else {
-            throw new MultiblockValidationException("Block isn't good for the side of this multiblock!");
-        }
     }
 
     @Override

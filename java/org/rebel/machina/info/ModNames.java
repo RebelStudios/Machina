@@ -16,6 +16,8 @@ public class ModNames {
     public static String blockMetalName = "blockMetal";
     public static String[] blockMetalNames = new String[] {"blockLead","blockSilver","blockCopper","blockTin","blockBronze","blockAluminum","blockInvar","blockNickel","blockSolder","blockElectrum","blockSteel","blockBrass","blockZinc","blockPlatinum"};
 
+    public static String[] blockBFPart = new String[] {"blockBlastFurnaceController", "blockToughBricks"};
+
     public static String itemIngotString = "itemIngot";
     public static String[] itemIngotStrings = new String[] {"ingotLead","ingotSilver","ingotCopper","ingotTin","ingotAluminum","ingotNickel","ingotElectrum","ingotZinc","ingotPlatinum","ingotBronze","ingotInvar","ingotSolder","ingotSteel","ingotBrass"};
     public static String itemNuggetString = "itemNugget";
