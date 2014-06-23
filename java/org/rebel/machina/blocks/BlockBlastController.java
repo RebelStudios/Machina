@@ -1,12 +1,8 @@
 package org.rebel.machina.blocks;
 
-import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
-import org.rebel.machina.multiblock.helper.BlockMultiblockBase;
-import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.tileentity.TEBlastFurnace;
 
 /**

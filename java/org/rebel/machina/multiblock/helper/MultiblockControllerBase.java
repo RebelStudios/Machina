@@ -1,9 +1,5 @@
 package org.rebel.machina.multiblock.helper;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
@@ -11,6 +7,10 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.util.MachinaLog;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 
 /**
  * This class contains the base logic for "multiblock controllers". Conceptually, they are
@@ -689,7 +689,7 @@ public abstract class MultiblockControllerBase {
 		
 		connectedParts.removeAll(deadParts);
         // Warning
-		MachinaLog.mbWarn("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote?"CLIENT":"SERVER", deadParts.size(), connectedParts.size());
+		MachinaLog.mbWarn("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote ? "CLIENT" : "SERVER", deadParts.size(), connectedParts.size());
 	}
 
 	/**

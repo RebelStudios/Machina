@@ -1,6 +1,5 @@
 package org.rebel.machina.tileentity;
 
-import net.minecraft.tileentity.TileEntity;
 import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;

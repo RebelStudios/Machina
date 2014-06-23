@@ -1,9 +1,9 @@
 package org.rebel.machina.multiblock.helper;
 
-import java.util.HashMap;
-
 import net.minecraft.world.World;
 import org.rebel.machina.util.MachinaLog;
+
+import java.util.HashMap;
 
 /**
  * This is a very static singleton registry class which directs incoming events to sub-objects, which

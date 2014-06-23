@@ -1,10 +1,10 @@
 package org.rebel.machina.multiblock.helper;
 
-import java.util.Set;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import org.rebel.machina.util.CoordTriplet;
+
+import java.util.Set;
 
 /**
  * Basic interface for a multiblock machine part. This is defined as an abstract class

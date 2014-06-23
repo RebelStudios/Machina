@@ -2,9 +2,9 @@ package org.rebel.machina.multiblock.helper.rectangular;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
+import org.rebel.machina.util.CoordTriplet;
 
 public abstract class RectangularMultiblockControllerBase extends
 		MultiblockControllerBase {
