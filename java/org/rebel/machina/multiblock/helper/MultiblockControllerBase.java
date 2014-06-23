@@ -689,7 +689,7 @@ public abstract class MultiblockControllerBase {
 		
 		connectedParts.removeAll(deadParts);
         // Warning
-		MachinaLog.mbInfo("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote?"CLIENT":"SERVER", deadParts.size(), connectedParts.size());
+		MachinaLog.mbWarn("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote?"CLIENT":"SERVER", deadParts.size(), connectedParts.size());
 	}
 
 	/**

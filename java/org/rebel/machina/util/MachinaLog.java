@@ -15,22 +15,40 @@ public class MachinaLog {
         logger = FMLLog.getLogger();
     }
 
-    public static void info(String message) {
-        logger.log(Level.INFO,"[Machina] " + message);
+    private static void log(Level level, String message) {
+        logger.log(level, "[Machina] " + message);
     }
 
-    public static void warning(String message) { logger.log(Level.WARN, "[Machina] " + message); }
+    private static void mbLog(Level level, String message, Object... obj) {
+        logger.log(level, "[Machina-Multiblock] " + message);
+    }
+
+    public static void info(String message) {
+        log(Level.INFO, message);
+    }
+
+    public static void warning(String message) {
+        log(Level.WARN, message);
+    }
 
     public static void error(String message) {
-        logger.log(Level.ERROR, "[Machina] " + message);
+        log(Level.ERROR, message);
     }
 
     public static void severe(String message) {
-        logger.log(Level.FATAL, "[Machina] " + message);
+        log(Level.FATAL, message);
     }
 
-    public static void mbInfo(String message, Object... ob) {
-        logger.log(Level.INFO, "[Machina-Multiblock] " + message, ob);
+    public static void mbInfo(String message, Object... obj) {
+        mbLog(Level.INFO, message, obj);
+    }
+
+    public static void mbWarn(String message, Object... obj) {
+        mbLog(Level.WARN, message, obj);
+    }
+
+    public static void mbError(String message, Object... obj) {
+        mbLog(Level.ERROR, message, obj);
     }
 
 }
