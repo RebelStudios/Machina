@@ -9,7 +9,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
-import org.rebel.machina.util.BeefCoreLog;
 import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.util.MachinaLog;
 
@@ -689,7 +688,8 @@ public abstract class MultiblockControllerBase {
 		}
 		
 		connectedParts.removeAll(deadParts);
-		BeefCoreLog.warning("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote?"CLIENT":"SERVER", deadParts.size(), connectedParts.size());
+        // Warning
+		MachinaLog.mbInfo("[%s] Controller found %d dead parts during an audit, %d parts remain attached", worldObj.isRemote?"CLIENT":"SERVER", deadParts.size(), connectedParts.size());
 	}
 
 	/**
