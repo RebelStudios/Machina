@@ -61,4 +61,20 @@ public class MachinaUtil {
         return min + (int)(Math.random() * ((max - min) + 1));
     }
 
+    /**
+     * Computes a random integer [min, max], allowing for higher or lower numbers to be favored
+     * @param min the least the random integer is allowed to be
+     * @param max the highest the random integer is allowed to be
+     * @param highPercentage the chance that a high number will be picked
+     * @return an integer [min, max]
+     */
+    public static int randomIntRangeFloatHigh(int min, int max, float highPercentage) {
+        int i = min + (int)(Math.random() * ((max - min) + 1));
+        int average = (min + max) / 2;
+        if (i < average && !checkChance(highPercentage)) {
+            randomIntRangeFloatHigh(min, max, highPercentage);
+        }
+        return i;
+    }
+
 }

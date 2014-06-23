@@ -31,7 +31,6 @@ public class MachinaBlocks {
         machineCrusher = new BlockCrusher().setBlockName("machina.machineCrusher").setCreativeTab(Machina.machinaTab);
         machineCrusherCore = new BlockCrusherCore().setBlockName("machina.machineCrusherCore").setBlockTextureName(Machina.MODID + ":machineCrusherCore").setCreativeTab(Machina.machinaTab);
         blockManualCrusher = new BlockManualCrusher().setBlockName("machina.blockManualCrusher").setCreativeTab(Machina.machinaTab);
-        blockManualCrusher.slipperiness = 69.0f;
         blockOre = new BlockOre().setBlockName("machina.blockOre").setCreativeTab(Machina.machinaTab);
         blockMetal = new BlockMetal().setBlockName("machina.blockMetal").setCreativeTab(Machina.machinaTab);
         blockBFParts = new BlockBlastFurnacePart().setBlockName("machina.blockBFPart").setCreativeTab(Machina.machinaTab);
