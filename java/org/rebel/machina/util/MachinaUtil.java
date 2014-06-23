@@ -51,4 +51,14 @@ public class MachinaUtil {
         return false;
     }
 
+    /**
+     * computes a random integer between (and including) two values
+     * @param min the least the random integer is allowed to be
+     * @param max the highest the random integer is allowed to be
+     * @return an integer [min, max]
+     */
+    public static int randomIntRange(int min, int max) {
+        return min + (int)(Math.random() * ((max - min) + 1));
+    }
+
 }
