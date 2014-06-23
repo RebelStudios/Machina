@@ -4,8 +4,8 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
-import org.rebel.machina.MachinaItems;
 import org.rebel.machina.MachinaBlocks;
+import org.rebel.machina.MachinaItems;
 import org.rebel.machina.info.MachinaNames;
 
 /**
