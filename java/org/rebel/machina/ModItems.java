@@ -32,15 +32,15 @@ public class ModItems {
         for (int i = 0; i < ModNames.itemIngotStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemIngotStrings[i], new ItemStack(itemIngot, 1, i));
         }
-        LogHelper.info("[Machina] Registered: Ingots");
+        LogHelper.info("Registered: Ingots");
         for (int i = 0; i < ModNames.itemNuggetStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemNuggetStrings[i], new ItemStack(itemNugget, 1, i));
         }
-        LogHelper.info("[Machina] Registered: Nuggets");
+        LogHelper.info("Registered: Nuggets");
         for (int i = 0; i < ModNames.itemDustStrings.length; i++) {
             OreDictionary.registerOre(ModNames.itemDustStrings[i], new ItemStack(itemDust, 1, i));
         }
-        LogHelper.info("[Machina] Registered: Dusts");
+        LogHelper.info("Registered: Dusts");
     }
 
     public static void registerItems() {

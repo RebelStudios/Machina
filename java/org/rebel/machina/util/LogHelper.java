@@ -16,7 +16,17 @@ public class LogHelper {
     }
 
     public static void info(String message) {
-        logger.log(Level.INFO, message);
+        logger.log(Level.INFO,"[Machina] " + message);
+    }
+
+    public static void warning(String message) { logger.log(Level.WARN, "[Machina] " + message); }
+
+    public static void error(String message) {
+        logger.log(Level.ERROR, "[Machina] " + message);
+    }
+
+    public static void severe(String message) {
+        logger.log(Level.FATAL, "[Machina] " + message);
     }
 
     public static void mbInfo(String message, Object... ob) {

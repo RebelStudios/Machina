@@ -40,11 +40,11 @@ public class ModBlocks {
         for (int i = 0; i < ModNames.blockOreNames.length; i++) {
             OreDictionary.registerOre(ModNames.blockOreNames[i], new ItemStack(blockOre, 1, i));
         }
-        LogHelper.info("[Machina] Registered: Ores");
+        LogHelper.info("Registered: Ores");
         for (int i = 0; i < ModNames.blockMetalNames.length; i++) {
             OreDictionary.registerOre(ModNames.blockMetalNames[i], new ItemStack(blockMetal, 1, i));
         }
-        LogHelper.info("[Machina] Registered: Metal Blocks");
+        LogHelper.info("Registered: Metal Blocks");
     }
 
     public static void registerBlocks() {
