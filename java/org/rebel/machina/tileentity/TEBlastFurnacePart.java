@@ -2,10 +2,8 @@ package org.rebel.machina.tileentity;
 
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
-import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockTileEntityBase;
-import org.rebel.machina.util.Util;
 
 /**
  * Created by XVicarious on 6/22/2014.

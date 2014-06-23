@@ -1,9 +1,7 @@
 package org.rebel.machina.multiblock;
 
-import net.minecraft.block.Block;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
-import org.rebel.machina.ModBlocks;
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
 import org.rebel.machina.multiblock.helper.IMultiblockPart;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
@@ -12,7 +10,7 @@ import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockControllerBase;
 import org.rebel.machina.tileentity.TEBlastFurnacePart;
 import org.rebel.machina.util.MachinaLog;
-import org.rebel.machina.util.Util;
+import org.rebel.machina.util.MachinaUtil;
 
 import java.util.Set;
 
@@ -137,7 +135,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void isBlockGoodForInterior(World world, int x, int y, int z) throws MultiblockValidationException {
-        if (!Util.isBlockAir(world, x, y, z)) {
+        if (!MachinaUtil.isBlockAir(world, x, y, z)) {
             throw new MultiblockValidationException("Interior must be empty!");
         }
     }

@@ -4,7 +4,7 @@ import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import org.rebel.machina.util.Util;
+import org.rebel.machina.util.MachinaUtil;
 
 import java.util.ArrayList;
 
@@ -43,7 +43,7 @@ public class ManualCrusherRecipe {
     public boolean isValidOre(Block input, int metadata) {
         ItemStack compareTo = new ItemStack(input, 1, metadata);
         for (ItemStack i : this.blockOre) {
-            if (Util.isItemEqual(compareTo, i)) {
+            if (MachinaUtil.isItemEqual(compareTo, i)) {
                 return true;
             }
         }

@@ -9,7 +9,7 @@ import java.util.Random;
 /**
  * Created by XVicarious on 6/20/2014.
  */
-public class Util {
+public class MachinaUtil {
 
     /**
      * Check if event will happen

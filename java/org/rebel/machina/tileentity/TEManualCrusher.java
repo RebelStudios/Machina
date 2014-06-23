@@ -10,7 +10,7 @@ import org.rebel.machina.Machina;
 import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.recipe.ManualCrusherRecipe;
 import org.rebel.machina.recipe.RecipeLists;
-import org.rebel.machina.util.Util;
+import org.rebel.machina.util.MachinaUtil;
 
 /**
  * Created by XVicarious on 6/16/2014.
@@ -45,7 +45,7 @@ public class TEManualCrusher extends TileEntity {
         if (recipe != null) {
             if (crushing >= recipe.jumpsToCrush) {
                 for (Pair<ItemStack, Float> p : recipe.outputs) {
-                    if (Util.checkChance(p.getValue())) {
+                    if (MachinaUtil.checkChance(p.getValue())) {
                         Machina.network.sendToServer(new MessageManualCrusher(this.worldObj.provider.dimensionId, this.xCoord, this.yCoord, this.zCoord, p.getKey()));
                     }
                 }
