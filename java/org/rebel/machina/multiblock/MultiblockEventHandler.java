@@ -14,6 +14,7 @@ import net.minecraftforge.event.world.WorldEvent;
  * process any blocks that are in chunks which are still loading.
  */
 public class MultiblockEventHandler {
+
 	@SubscribeEvent(priority = EventPriority.NORMAL)
 	public void onChunkLoad(ChunkEvent.Load loadEvent) {
 		Chunk chunk = loadEvent.getChunk();
@@ -26,4 +27,5 @@ public class MultiblockEventHandler {
 	public void onWorldUnload(WorldEvent.Unload unloadWorldEvent) {
 		MultiblockRegistry.onWorldUnloaded(unloadWorldEvent.world);
 	}
+
 }
