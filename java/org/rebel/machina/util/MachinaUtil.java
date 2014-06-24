@@ -69,7 +69,7 @@ public class MachinaUtil {
      * @return an integer [min, max]
      */
     public static int randomIntRangeFloatHigh(int min, int max, float highPercentage) {
-        int i = min + (int)(Math.random() * ((max - min) + 1));
+        int i = randomIntRange(min, max);
         int average = (min + max) / 2;
         if (i < average && !checkChance(highPercentage)) {
             i = randomIntRangeFloatHigh(min, max, highPercentage);

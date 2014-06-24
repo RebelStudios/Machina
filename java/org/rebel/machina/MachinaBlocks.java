@@ -9,6 +9,7 @@ import org.rebel.machina.info.MachinaNames;
 import org.rebel.machina.items.ItemBlockBlastFurnacePart;
 import org.rebel.machina.items.ItemBlockMetal;
 import org.rebel.machina.items.ItemBlockOre;
+import org.rebel.machina.tileentity.TEManualCrusher;
 import org.rebel.machina.util.MachinaLog;
 
 /**
@@ -23,8 +24,6 @@ public class MachinaBlocks {
     public static Block blockOre;
     public static Block blockMetal;
     public static Block blockBFParts;
-    //public static Block blockBlastController;
-    //public static Block blockToughBrick;
 
     private static void makeBlocks() {
         machineWall = new BlockMachineWall().setBlockName("machina.machineWall").setBlockTextureName(Machina.MODID+":machineWall_0").setCreativeTab(Machina.machinaTab);
@@ -34,8 +33,6 @@ public class MachinaBlocks {
         blockOre = new BlockOre().setBlockName("machina.blockOre").setCreativeTab(Machina.machinaTab);
         blockMetal = new BlockMetal().setBlockName("machina.blockMetal").setCreativeTab(Machina.machinaTab);
         blockBFParts = new BlockBlastFurnacePart().setBlockName("machina.blockBFPart").setCreativeTab(Machina.machinaTab);
-        //blockBlastController = new BlockBlastController().setBlockName("machina.blockBlastController").setCreativeTab(Machina.machinaTab).setBlockTextureName(Machina.MODID + ":blockBlastController");
-        //blockToughBrick = new BlockToughBrick().setBlockName("machina.blockToughBrick").setCreativeTab(Machina.machinaTab).setBlockTextureName(Machina.MODID + ":blockToughBrick");
     }
 
     private static void oreRegister() {
@@ -58,8 +55,7 @@ public class MachinaBlocks {
         GameRegistry.registerBlock(blockOre, ItemBlockOre.class,"machina.blockOre");
         GameRegistry.registerBlock(blockMetal, ItemBlockMetal.class, "machina.blockMetal");
         GameRegistry.registerBlock(blockBFParts, ItemBlockBlastFurnacePart.class, "machina.blockBFPart");
-        //GameRegistry.registerBlock(blockBlastController, "machina.blockBlastController");
-        //GameRegistry.registerBlock(blockToughBrick, "machina.blockToughBrick");
+        GameRegistry.registerTileEntity(TEManualCrusher.class,"TEManualCrusher");
         oreRegister();
     }
 

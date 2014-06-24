@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import org.rebel.machina.info.MachinaNames;
+import org.rebel.machina.tileentity.TEBlastFurnacePart;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class BlockBlastFurnacePart extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World var1, int var2) {
-        return null;
+        return new TEBlastFurnacePart();
     }
 
     public static boolean isController(int metadata) {

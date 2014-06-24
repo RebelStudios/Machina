@@ -12,6 +12,7 @@ public class ItemBlockBlastFurnacePart extends ItemBlock {
 
     public ItemBlockBlastFurnacePart(Block block) {
         super(block);
+        setMaxDamage(0);
         setHasSubtypes(true);
     }
 

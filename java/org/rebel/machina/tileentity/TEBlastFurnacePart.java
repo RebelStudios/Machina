@@ -1,6 +1,7 @@
 package org.rebel.machina.tileentity;
 
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
+import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockTileEntityBase;
@@ -70,11 +71,11 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase {
 
     @Override
     public MultiblockControllerBase createNewMultiblock() {
-        return null;
+        return new MultiblockBlastFurnace(this.worldObj);
     }
 
     @Override
     public Class<? extends MultiblockControllerBase> getMultiblockControllerType() {
-        return null;
+        return MultiblockBlastFurnace.class;
     }
 }

@@ -12,6 +12,7 @@ import org.rebel.machina.tileentity.TEBlastFurnacePart;
 import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.util.MachinaUtil;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -25,6 +26,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     public MultiblockBlastFurnace(World world) {
         super(world);
+        attachedControllers = new HashSet<MultiblockTileEntityBase>();
         if(world.isRemote) {
             ordinal = -1;
         }
@@ -35,11 +37,12 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     public void onAttachedPartWithMultiblockData(IMultiblockPart part, NBTTagCompound data) {
-
+        this.readFromNBT(data);
     }
 
     @Override
     protected void onBlockAdded(IMultiblockPart newPart) {
+        MachinaLog.info("Adding part!");
         if (newPart instanceof TEBlastFurnacePart) {
             TEBlastFurnacePart teb = (TEBlastFurnacePart)newPart;
             if (BlockBlastFurnacePart.isController(teb.getBlockMetadata())) {
@@ -50,7 +53,12 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onBlockRemoved(IMultiblockPart oldPart) {
-
+        if (oldPart instanceof  TEBlastFurnacePart) {
+            TEBlastFurnacePart bfPart = (TEBlastFurnacePart)oldPart;
+            if (BlockBlastFurnacePart.isController(bfPart.getBlockMetadata())) {
+                attachedControllers.remove(bfPart);
+            }
+        }
     }
 
     @Override
@@ -64,43 +72,53 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     }
 
     @Override
-    protected void onMachinePaused() {
-
+    protected void isMachineWhole() throws MultiblockValidationException {
+        if (attachedControllers.size() < 1) {
+            throw new MultiblockValidationException("Not enough controllers!");
+        } else if (attachedControllers.size() > 1) {
+            throw new MultiblockValidationException("Too many controllers!");
+        }
+        super.isMachineWhole();
     }
 
     @Override
-    protected void onMachineDisassembled() {
+    protected void onMachinePaused() {}
 
+    @Override
+    protected void onMachineDisassembled() {
     }
 
     @Override
     protected int getMinimumNumberOfBlocksForAssembledMachine() {
-        return 0;
+        return 42;
     }
 
     @Override
     protected int getMaximumXSize() {
-        return 0;
+        return 3;
     }
 
     @Override
     protected int getMaximumZSize() {
-        return 0;
+        return 3;
     }
 
     @Override
     protected int getMaximumYSize() {
-        return 0;
+        return 5;
     }
 
     @Override
     protected void onAssimilate(MultiblockControllerBase assimilated) {
-
+        if (!(assimilated instanceof MultiblockBlastFurnace)) {
+            MachinaLog.mbWarn("attemping to assimilate with another non-blastfurnace machine");
+            return;
+        }
     }
 
     @Override
     protected void onAssimilated(MultiblockControllerBase assimilator) {
-
+        this.attachedControllers.clear();
     }
 
     @Override

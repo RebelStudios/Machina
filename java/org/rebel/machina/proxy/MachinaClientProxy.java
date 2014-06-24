@@ -8,15 +8,11 @@ import org.rebel.machina.util.MachinaLog;
 /**
  * Created by bmaurer on 6/17/2014.
  */
-public class MachinaClientProxy implements MachinaProxy {
+public class MachinaClientProxy implements IMachinaProxy {
 
     @Override
     public void init() {
         FMLCommonHandler.instance().bus().register(new MultiblockClientTickHandler());
     }
 
-    @Override
-    public void handleManualCrusher(MessageManualCrusher message) {
-        MachinaLog.info("Shouldn't be here?");
-    }
 }
