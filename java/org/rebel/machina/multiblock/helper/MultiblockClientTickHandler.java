@@ -5,6 +5,7 @@ import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.Minecraft;
 
 public class MultiblockClientTickHandler {
+
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
@@ -13,4 +14,5 @@ public class MultiblockClientTickHandler {
             MultiblockRegistry.tickEnd(Minecraft.getMinecraft().theWorld);
         }
     }
+
 }

@@ -26,6 +26,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     public MultiblockBlastFurnace(World world) {
         super(world);
+        MachinaLog.mbInfo("ITSA ME! THE BLAST FURNACE CONTROLLER!");
         attachedControllers = new HashSet<MultiblockTileEntityBase>();
         if(world.isRemote) {
             ordinal = -1;
@@ -142,14 +143,10 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     }
 
     @Override
-    public void formatDescriptionPacket(NBTTagCompound data) {
-
-    }
+    public void formatDescriptionPacket(NBTTagCompound data) {}
 
     @Override
-    public void decodeDescriptionPacket(NBTTagCompound data) {
-
-    }
+    public void decodeDescriptionPacket(NBTTagCompound data) {}
 
     @Override
     protected void isBlockGoodForInterior(World world, int x, int y, int z) throws MultiblockValidationException {

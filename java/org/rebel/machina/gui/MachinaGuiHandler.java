@@ -22,7 +22,11 @@ public class MachinaGuiHandler implements IGuiHandler {
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        TileEntity te = world.getTileEntity(x, y, z);
+        if (te instanceof IMultiblockGuiHandler) {
+            return ((IMultiblockGuiHandler)te).getGuiElement(player.inventory);
+        }
         return null;
     }
-    
+
 }

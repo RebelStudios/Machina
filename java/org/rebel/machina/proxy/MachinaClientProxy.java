@@ -8,10 +8,11 @@ import org.rebel.machina.util.MachinaLog;
 /**
  * Created by bmaurer on 6/17/2014.
  */
-public class MachinaClientProxy implements IMachinaProxy {
+public class MachinaClientProxy extends MachinaServerProxy {
 
     @Override
     public void init() {
+        super.init();
         FMLCommonHandler.instance().bus().register(new MultiblockClientTickHandler());
     }
 

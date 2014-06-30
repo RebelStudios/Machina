@@ -11,6 +11,7 @@ import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockTileEntityBase;
+import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/22/2014.
@@ -23,7 +24,10 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
 
     @Override
     public void onMachineAssembled(MultiblockControllerBase multiblockControllerBase) {
-
+        super.onMachineAssembled(multiblockControllerBase);
+        if (multiblockControllerBase == null) {
+            throw new IllegalArgumentException("NULL CONTROLLER!  PANIC PANIC PANIC");
+        }
     }
 
     public MultiblockBlastFurnace getBlastFurnaceController() {
@@ -31,16 +35,14 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
     }
 
     @Override
+    public void isGoodForSides() throws MultiblockValidationException {}
+
+    @Override
     public void isGoodForFrame() throws MultiblockValidationException {
         int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
         if (BlockBlastFurnacePart.isController(metadata)) {
             throw new MultiblockValidationException("Blast Controller isn't proper for the frame!");
         }
-    }
-
-    @Override
-    public void isGoodForSides() throws MultiblockValidationException {
-
     }
 
     @Override
@@ -66,18 +68,14 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
 
     @Override
     public void onMachineBroken() {
-
+        super.onMachineBroken();
     }
 
     @Override
-    public void onMachineActivated() {
-
-    }
+    public void onMachineActivated() {}
 
     @Override
-    public void onMachineDeactivated() {
-
-    }
+    public void onMachineDeactivated() {}
 
     @Override
     public MultiblockControllerBase createNewMultiblock() {

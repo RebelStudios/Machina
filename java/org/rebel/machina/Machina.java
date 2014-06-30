@@ -19,6 +19,7 @@ import org.rebel.machina.gui.MachinaGuiHandler;
 import org.rebel.machina.multiblock.helper.MultiblockEventHandler;
 import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.proxy.IMachinaProxy;
+import org.rebel.machina.proxy.MachinaServerProxy;
 import org.rebel.machina.recipe.ModRecipes;
 import org.rebel.machina.recipe.RecipeLists;
 import org.rebel.machina.tileentity.TEBlastFurnacePart;
@@ -34,10 +35,12 @@ import org.rebel.machina.worldgen.MachinaOreGeneration;
 public class Machina
 {
     public static final String MODID = "Machina";
+    @Mod.Instance(MODID)
+    public static Machina instance;
     public static final String VERSION = "0.1";
     public static final String NAME = "Machina";
     @SidedProxy(clientSide = "org.rebel.machina.proxy.MachinaClientProxy", serverSide = "org.rebel.machina.proxy.MachinaServerProxy")
-    public static IMachinaProxy proxy;
+    public static MachinaServerProxy proxy;
     public static SimpleNetworkWrapper network;
     public static MultiblockEventHandler multiblockEventHandler;
     public static final CreativeTabs machinaTab = new CreativeTabs("tabMachina") {
@@ -57,12 +60,14 @@ public class Machina
 
     @EventHandler
     public void startServer(FMLServerAboutToStartEvent event) {
-        multiblockEventHandler = new MultiblockEventHandler();
-        MinecraftForge.EVENT_BUS.register(multiblockEventHandler);
+
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        multiblockEventHandler = new MultiblockEventHandler();
+        MinecraftForge.EVENT_BUS.register(multiblockEventHandler);
+        proxy.init();
         MachinaBlocks.registerBlocks();
         MachinaItems.registerItems();
         addRecipes();
@@ -78,4 +83,5 @@ public class Machina
         ModRecipes.addNuggetRecipes();
         RecipeLists.makeRecipes();
     }
+
 }
