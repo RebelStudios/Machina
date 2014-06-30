@@ -1,6 +1,12 @@
 package org.rebel.machina.tileentity;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.player.InventoryPlayer;
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
+import org.rebel.machina.gui.BlastFurnaceGUI;
+import org.rebel.machina.gui.container.BlastFurnaceContainer;
+import org.rebel.machina.multiblock.IMultiblockGuiHandler;
 import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
@@ -9,7 +15,7 @@ import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockTile
 /**
  * Created by XVicarious on 6/22/2014.
  */
-public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase {
+public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase implements IMultiblockGuiHandler {
 
     public TEBlastFurnacePart() {
         super();
@@ -18,6 +24,10 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase {
     @Override
     public void onMachineAssembled(MultiblockControllerBase multiblockControllerBase) {
 
+    }
+
+    public MultiblockBlastFurnace getBlastFurnaceController() {
+        return (MultiblockBlastFurnace)this.getMultiblockController();
     }
 
     @Override
@@ -77,5 +87,30 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase {
     @Override
     public Class<? extends MultiblockControllerBase> getMultiblockControllerType() {
         return MultiblockBlastFurnace.class;
+    }
+
+    @Override
+    public Object getContainer(InventoryPlayer inventoryPlayer) {
+        if (!this.isConnected()) {
+            return null;
+        }
+        int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
+        if (BlockBlastFurnacePart.isController(metadata)) {
+            return new BlastFurnaceContainer(this, inventoryPlayer.player);
+        }
+        return null;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public Object getGuiElement(InventoryPlayer inventoryPlayer) {
+        if (!this.isConnected()) {
+            return null;
+        }
+        int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
+        if (BlockBlastFurnacePart.isController(metadata)) {
+            return new BlastFurnaceGUI(new BlastFurnaceContainer(this, inventoryPlayer.player), this);
+        }
+        return null;
     }
 }
