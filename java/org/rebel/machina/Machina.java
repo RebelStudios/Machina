@@ -13,7 +13,9 @@ import cpw.mods.fml.relauncher.Side;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.network.NetworkManager;
 import net.minecraftforge.common.MinecraftForge;
+import org.rebel.machina.gui.MachinaGuiHandler;
 import org.rebel.machina.multiblock.helper.MultiblockEventHandler;
 import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.proxy.IMachinaProxy;
@@ -66,6 +68,7 @@ public class Machina
         addRecipes();
         GameRegistry.registerTileEntity(TEBlastFurnacePart.class, "TEBlastFurnacePart");
         GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new MachinaGuiHandler());
     }
 
     private void addRecipes() {

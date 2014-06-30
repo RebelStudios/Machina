@@ -4,8 +4,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.InventoryPlayer;
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
-import org.rebel.machina.gui.BlastFurnaceGUI;
-import org.rebel.machina.gui.container.BlastFurnaceContainer;
+import org.rebel.machina.gui.GuiBlastFurnace;
+import org.rebel.machina.gui.container.ContainerBlastFurnace;
 import org.rebel.machina.multiblock.IMultiblockGuiHandler;
 import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
@@ -96,7 +96,7 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
         }
         int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
         if (BlockBlastFurnacePart.isController(metadata)) {
-            return new BlastFurnaceContainer(this, inventoryPlayer.player);
+            return new ContainerBlastFurnace(this, inventoryPlayer.player);
         }
         return null;
     }
@@ -109,7 +109,7 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
         }
         int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
         if (BlockBlastFurnacePart.isController(metadata)) {
-            return new BlastFurnaceGUI(new BlastFurnaceContainer(this, inventoryPlayer.player), this);
+            return new GuiBlastFurnace(new ContainerBlastFurnace(this, inventoryPlayer.player), this);
         }
         return null;
     }

@@ -9,11 +9,11 @@ import org.rebel.machina.tileentity.TEBlastFurnacePart;
 /**
  * Created by XVicarious on 6/29/2014.
  */
-public class BlastFurnaceContainer extends Container {
+public class ContainerBlastFurnace extends Container {
 
     TEBlastFurnacePart part;
 
-    public BlastFurnaceContainer(TEBlastFurnacePart part, EntityPlayer player) {
+    public ContainerBlastFurnace(TEBlastFurnacePart part, EntityPlayer player) {
         this.part = part;
         this.bindInventory(player.inventory);
     }

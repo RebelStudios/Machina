@@ -7,11 +7,11 @@ import org.rebel.machina.tileentity.TEBlastFurnacePart;
 /**
  * Created by XVicarious on 6/29/2014.
  */
-public class BlastFurnaceGUI extends MachinaGUIBase {
+public class GuiBlastFurnace extends MachinaGUIBase {
 
     TEBlastFurnacePart part;
 
-    public BlastFurnaceGUI(Container container, TEBlastFurnacePart te) {
+    public GuiBlastFurnace(Container container, TEBlastFurnacePart te) {
         super(container);
         this.part = te;
     }
