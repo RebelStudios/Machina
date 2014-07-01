@@ -41,7 +41,7 @@ public class ItemNugget extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemNuggetStrings.length-1);
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemNuggetStrings.length - 1);
         return "item." + MachinaNames.itemNuggetStrings[i];
     }
 

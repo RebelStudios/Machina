@@ -46,9 +46,9 @@ public class MachinaItems {
     public static void registerItems() {
         makeItems();
         GameRegistry.registerItem(itemIngot, "machina.ingot");
-        GameRegistry.registerItem(itemBlend,"machina.blend");
-        GameRegistry.registerItem(itemDust,"machina.dust");
-        GameRegistry.registerItem(itemNugget,"machina.nugget");
+        GameRegistry.registerItem(itemBlend, "machina.blend");
+        GameRegistry.registerItem(itemDust, "machina.dust");
+        GameRegistry.registerItem(itemNugget, "machina.nugget");
         oreRegister();
     }
 

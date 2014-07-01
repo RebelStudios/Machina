@@ -14,11 +14,11 @@ import org.rebel.machina.info.MachinaNames;
 public class ModRecipes {
 
     public static void addBlendRecipes() {
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 2, 0), new Object[] {"dustGold", "dustSilver"}));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 5, 1), new Object[] {"dustCopper", "dustCopper", "dustCopper", "dustCopper", "dustTin"}));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 3, 2), new Object[] {"dustIron", "dustIron", "dustNickel"}));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 5, 3), new Object[] {"dustTin", "dustTin", "dustTin", "dustLead", "dustLead"}));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 3, 4), new Object[] {"dustCopper", "dustCopper", "dustZinc"}));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 2, 0), new Object[]{"dustGold", "dustSilver"}));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 5, 1), new Object[]{"dustCopper", "dustCopper", "dustCopper", "dustCopper", "dustTin"}));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 3, 2), new Object[]{"dustIron", "dustIron", "dustNickel"}));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 5, 3), new Object[]{"dustTin", "dustTin", "dustTin", "dustLead", "dustLead"}));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemBlend, 3, 4), new Object[]{"dustCopper", "dustCopper", "dustZinc"}));
     }
 
     public static void addSingleIngotRecipes() {
@@ -29,10 +29,10 @@ public class ModRecipes {
             GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, i), new ItemStack(MachinaItems.itemIngot, 1, i), 0.5f);
         }
         for (int i = 0; i < MachinaNames.itemIngotStrings.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemIngot, 1, i), new Object[] {MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i],}));
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaItems.itemIngot, 1, i), new Object[]{MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i], MachinaNames.itemNuggetStrings[i],}));
         }
-        GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, MachinaNames.itemDustStrings.length-1), new ItemStack(Items.iron_ingot), 0.5f);
-        GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, MachinaNames.itemDustStrings.length-2), new ItemStack(Items.gold_ingot), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, MachinaNames.itemDustStrings.length - 1), new ItemStack(Items.iron_ingot), 0.5f);
+        GameRegistry.addSmelting(new ItemStack(MachinaItems.itemDust, 1, MachinaNames.itemDustStrings.length - 2), new ItemStack(Items.gold_ingot), 0.5f);
         /* Blends */
         GameRegistry.addSmelting(new ItemStack(MachinaItems.itemBlend, 1, 0), new ItemStack(MachinaItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotElectrum")), 0.5f);
         GameRegistry.addSmelting(new ItemStack(MachinaItems.itemBlend, 1, 1), new ItemStack(MachinaItems.itemIngot, 1, java.util.Arrays.asList(MachinaNames.itemIngotStrings).indexOf("ingotBronze")), 0.5f);
@@ -49,7 +49,7 @@ public class ModRecipes {
 
     public static void addMetalBlockRecipes() {
         for (int i = 0; i < MachinaNames.blockMetalNames.length; i++) {
-            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaBlocks.blockMetal, 1, i), new Object[] {MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i]}));
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MachinaBlocks.blockMetal, 1, i), new Object[]{MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i], MachinaNames.itemIngotStrings[i]}));
         }
     }
 

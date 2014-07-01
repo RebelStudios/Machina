@@ -27,7 +27,7 @@ public class MachinaBlocks {
     public static Block blockBFCarbon;
 
     private static void makeBlocks() {
-        machineWall = new BlockMachineWall().setBlockName("machina.machineWall").setBlockTextureName(Machina.MODID+":machineWall_0").setCreativeTab(Machina.machinaTab);
+        machineWall = new BlockMachineWall().setBlockName("machina.machineWall").setBlockTextureName(Machina.MODID + ":machineWall_0").setCreativeTab(Machina.machinaTab);
         machineCrusher = new BlockCrusher().setBlockName("machina.machineCrusher").setCreativeTab(Machina.machinaTab);
         machineCrusherCore = new BlockCrusherCore().setBlockName("machina.machineCrusherCore").setBlockTextureName(Machina.MODID + ":machineCrusherCore").setCreativeTab(Machina.machinaTab);
         blockManualCrusher = new BlockManualCrusher().setBlockName("machina.blockManualCrusher").setCreativeTab(Machina.machinaTab);
@@ -51,14 +51,14 @@ public class MachinaBlocks {
     public static void registerBlocks() {
         makeBlocks();
         GameRegistry.registerBlock(machineWall, "machina.machineWall");
-        GameRegistry.registerBlock(machineCrusher,"machina.machineCrusher");
-        GameRegistry.registerBlock(machineCrusherCore,"machina.machineCrusherCore");
-        GameRegistry.registerBlock(blockManualCrusher,"machina.blockManualCrusher");
-        GameRegistry.registerBlock(blockOre, ItemBlockOre.class,"machina.blockOre");
+        GameRegistry.registerBlock(machineCrusher, "machina.machineCrusher");
+        GameRegistry.registerBlock(machineCrusherCore, "machina.machineCrusherCore");
+        GameRegistry.registerBlock(blockManualCrusher, "machina.blockManualCrusher");
+        GameRegistry.registerBlock(blockOre, ItemBlockOre.class, "machina.blockOre");
         GameRegistry.registerBlock(blockMetal, ItemBlockMetal.class, "machina.blockMetal");
         GameRegistry.registerBlock(blockBFParts, ItemBlockBlastFurnacePart.class, "machina.blockBFPart");
         GameRegistry.registerBlock(blockBFCarbon, "machina.blockBFCarbon");
-        GameRegistry.registerTileEntity(TEManualCrusher.class,"TEManualCrusher");
+        GameRegistry.registerTileEntity(TEManualCrusher.class, "TEManualCrusher");
         oreRegister();
     }
 

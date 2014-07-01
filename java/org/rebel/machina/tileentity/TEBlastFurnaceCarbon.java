@@ -15,7 +15,8 @@ public class TEBlastFurnaceCarbon extends TEBlastFurnacePart {
 
     public ItemStack[] inventory;
 
-    public TEBlastFurnaceCarbon() {}
+    public TEBlastFurnaceCarbon() {
+    }
 
     @Override
     public void isGoodForSides() throws MultiblockValidationException {

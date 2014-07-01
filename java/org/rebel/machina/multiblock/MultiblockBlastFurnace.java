@@ -27,10 +27,9 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     public MultiblockBlastFurnace(World world) {
         super(world);
         attachedControllers = new HashSet<MultiblockTileEntityBase>();
-        if(world.isRemote) {
+        if (world.isRemote) {
             ordinal = -1;
-        }
-        else {
+        } else {
             ordinal = nextOrdinal++;
         }
     }
@@ -43,7 +42,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     @Override
     protected void onBlockAdded(IMultiblockPart newPart) {
         if (newPart instanceof TEBlastFurnacePart) {
-            TEBlastFurnacePart teb = (TEBlastFurnacePart)newPart;
+            TEBlastFurnacePart teb = (TEBlastFurnacePart) newPart;
             if (BlockBlastFurnacePart.isController(teb.getBlockMetadata())) {
                 attachedControllers.add(teb);
             }
@@ -52,8 +51,8 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onBlockRemoved(IMultiblockPart oldPart) {
-        if (oldPart instanceof  TEBlastFurnacePart) {
-            TEBlastFurnacePart bfPart = (TEBlastFurnacePart)oldPart;
+        if (oldPart instanceof TEBlastFurnacePart) {
+            TEBlastFurnacePart bfPart = (TEBlastFurnacePart) oldPart;
             if (BlockBlastFurnacePart.isController(bfPart.getBlockMetadata())) {
                 attachedControllers.remove(bfPart);
             }
@@ -81,7 +80,8 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     }
 
     @Override
-    protected void onMachinePaused() {}
+    protected void onMachinePaused() {
+    }
 
     @Override
     protected void onMachineDisassembled() {
@@ -142,10 +142,12 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     }
 
     @Override
-    public void formatDescriptionPacket(NBTTagCompound data) {}
+    public void formatDescriptionPacket(NBTTagCompound data) {
+    }
 
     @Override
-    public void decodeDescriptionPacket(NBTTagCompound data) {}
+    public void decodeDescriptionPacket(NBTTagCompound data) {
+    }
 
     @Override
     protected void isBlockGoodForInterior(World world, int x, int y, int z) throws MultiblockValidationException {

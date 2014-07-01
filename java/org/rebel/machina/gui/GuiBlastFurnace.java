@@ -29,6 +29,6 @@ public class GuiBlastFurnace extends MachinaGUIBase {
         ResourceLocation containerBg = new ResourceLocation(Machina.MODID.toLowerCase(), "textures/gui/guiBlastFurnace.png");
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
         this.mc.renderEngine.bindTexture(containerBg);
-        this.drawTexturedModalRect((width-xSize)/2, (height-ySize)/2, 0, 0, xSize, ySize);
+        this.drawTexturedModalRect((width - xSize) / 2, (height - ySize) / 2, 0, 0, xSize, ySize);
     }
 }

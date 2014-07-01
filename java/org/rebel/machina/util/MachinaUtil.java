@@ -13,6 +13,7 @@ public class MachinaUtil {
 
     /**
      * Check if event will happen
+     *
      * @param chance the chance said event will happen (1.0f being always, 0.0f being never)
      * @return event happens
      */
@@ -23,6 +24,7 @@ public class MachinaUtil {
 
     /**
      * Checks if both itemstacks contain the same block/item, true if so, false if not
+     *
      * @param lhs the first itemstack
      * @param rhs the second itemstack
      * @return true if blocks/items in the itemstack are the same, false if they are not
@@ -38,10 +40,11 @@ public class MachinaUtil {
 
     /**
      * Checks if the block occupying the space is air
+     *
      * @param world the world to check in
-     * @param x the x coordinate of the block
-     * @param y the y coordinate of the block
-     * @param z the z coordinate of the block
+     * @param x     the x coordinate of the block
+     * @param y     the y coordinate of the block
+     * @param z     the z coordinate of the block
      * @return If the block is in fact air, true.  If not false
      */
     public static boolean isBlockAir(World world, int x, int y, int z) {
@@ -53,18 +56,20 @@ public class MachinaUtil {
 
     /**
      * computes a random integer between (and including) two values
+     *
      * @param min the least the random integer is allowed to be
      * @param max the highest the random integer is allowed to be
      * @return an integer [min, max]
      */
     public static int randomIntRange(int min, int max) {
-        return min + (int)(Math.random() * ((max - min) + 1));
+        return min + (int) (Math.random() * ((max - min) + 1));
     }
 
     /**
      * Computes a random integer [min, max], allowing for higher or lower numbers to be favored
-     * @param min the least the random integer is allowed to be
-     * @param max the highest the random integer is allowed to be
+     *
+     * @param min            the least the random integer is allowed to be
+     * @param max            the highest the random integer is allowed to be
      * @param highPercentage the chance that a high number will be picked
      * @return an integer [min, max]
      */

@@ -15,7 +15,7 @@ public class MachinaGuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(x, y, z);
         if (te instanceof IMultiblockGuiHandler) {
-            return ((IMultiblockGuiHandler)te).getContainer(player.inventory);
+            return ((IMultiblockGuiHandler) te).getContainer(player.inventory);
         }
         return null;
     }
@@ -24,7 +24,7 @@ public class MachinaGuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity te = world.getTileEntity(x, y, z);
         if (te instanceof IMultiblockGuiHandler) {
-            return ((IMultiblockGuiHandler)te).getGuiElement(player.inventory);
+            return ((IMultiblockGuiHandler) te).getGuiElement(player.inventory);
         }
         return null;
     }

@@ -32,16 +32,16 @@ public class BlockBlastFurnacePart extends BlockContainer {
         super(Material.rock);
     }
 
-    @Override
-    public TileEntity createNewTileEntity(World var1, int var2) {
-        return new TEBlastFurnacePart();
-    }
-
     public static boolean isController(int metadata) {
         if (metadata == _CONTROLLER_META) {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World var1, int var2) {
+        return new TEBlastFurnacePart();
     }
 
     @Override

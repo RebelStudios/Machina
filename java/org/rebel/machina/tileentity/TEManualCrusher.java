@@ -34,13 +34,13 @@ public class TEManualCrusher extends TileEntity {
     @Override
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        NBTTagInt crushingTag = (NBTTagInt)nbt.getTag("crushing");
+        NBTTagInt crushingTag = (NBTTagInt) nbt.getTag("crushing");
         this.crushing = crushingTag.func_150287_d();
     }
 
     public void crushTick() {
-        Block toCrush = worldObj.getBlock(xCoord,yCoord-1,zCoord);
-        int metadata = worldObj.getBlockMetadata(xCoord,yCoord-1,zCoord);
+        Block toCrush = worldObj.getBlock(xCoord, yCoord - 1, zCoord);
+        int metadata = worldObj.getBlockMetadata(xCoord, yCoord - 1, zCoord);
         ManualCrusherRecipe recipe = RecipeLists.getMCRecipe(toCrush, metadata);
         if (recipe != null) {
             // Each "crush tick" we generate a new random value between the min and max

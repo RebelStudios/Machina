@@ -20,7 +20,8 @@ public class MessageManualCrusher implements IMessage {
     public int x, y, z;
     public ItemStack i;
 
-    public MessageManualCrusher() {}
+    public MessageManualCrusher() {
+    }
 
     public MessageManualCrusher(int world, int x, int y, int z, ItemStack i) {
         this.world = world;
@@ -32,10 +33,10 @@ public class MessageManualCrusher implements IMessage {
 
     @Override
     public void fromBytes(ByteBuf buf) {
-        world = ByteBufUtils.readVarInt(buf,5);
-        x = ByteBufUtils.readVarInt(buf,5);
-        y = ByteBufUtils.readVarInt(buf,5);
-        z = ByteBufUtils.readVarInt(buf,5);
+        world = ByteBufUtils.readVarInt(buf, 5);
+        x = ByteBufUtils.readVarInt(buf, 5);
+        y = ByteBufUtils.readVarInt(buf, 5);
+        z = ByteBufUtils.readVarInt(buf, 5);
         i = ByteBufUtils.readItemStack(buf);
     }
 

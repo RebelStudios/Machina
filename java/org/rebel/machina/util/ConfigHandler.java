@@ -14,8 +14,8 @@ public class ConfigHandler {
         Configuration config = new Configuration(configFile);
         config.load();
         // Set up ore generation values
-        MachinaInfo.oreGenerationSize = config.get("OreGeneration","oreGeneration",new int[] {10,9,8,7,6,5,4,3,2}).getIntList();
-        MachinaInfo.oreGenerationDepth = config.get("OreGeneration","oreGenerationDepth", new int[] {10,9,8,7,6,5,4,3,2}).getIntList();
+        MachinaInfo.oreGenerationSize = config.get("OreGeneration", "oreGeneration", new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2}).getIntList();
+        MachinaInfo.oreGenerationDepth = config.get("OreGeneration", "oreGenerationDepth", new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2}).getIntList();
         config.save();
     }
 

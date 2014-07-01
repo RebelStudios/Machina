@@ -41,7 +41,7 @@ public class ItemBlend extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemBlendStrings.length-1);
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemBlendStrings.length - 1);
         return "item." + MachinaNames.itemBlendStrings[i];
     }
 

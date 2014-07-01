@@ -34,24 +34,23 @@ import java.util.ArrayList;
  */
 
 @Mod(modid = Machina.MODID, version = Machina.VERSION, name = Machina.NAME)
-public class Machina
-{
+public class Machina {
     public static final String MODID = "Machina";
-    @Mod.Instance(MODID)
-    public static Machina instance;
     public static final String VERSION = "0.1";
     public static final String NAME = "Machina";
-    @SidedProxy(clientSide = "org.rebel.machina.proxy.MachinaClientProxy", serverSide = "org.rebel.machina.proxy.MachinaServerProxy")
-    public static MachinaServerProxy proxy;
-    public static SimpleNetworkWrapper network;
-    public static ArrayList<MultiblockTileEntityBase> controllerLess;
-    public static MultiblockEventHandler multiblockEventHandler;
     public static final CreativeTabs machinaTab = new CreativeTabs("tabMachina") {
         @Override
         public Item getTabIconItem() {
             return Items.beef;
         }
     };
+    @Mod.Instance(MODID)
+    public static Machina instance;
+    @SidedProxy(clientSide = "org.rebel.machina.proxy.MachinaClientProxy", serverSide = "org.rebel.machina.proxy.MachinaServerProxy")
+    public static MachinaServerProxy proxy;
+    public static SimpleNetworkWrapper network;
+    public static ArrayList<MultiblockTileEntityBase> controllerLess;
+    public static MultiblockEventHandler multiblockEventHandler;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {

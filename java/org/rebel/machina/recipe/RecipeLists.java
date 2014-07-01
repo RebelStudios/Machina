@@ -29,7 +29,7 @@ public class RecipeLists {
 
     public static ManualCrusherRecipe getMCRecipe(Block block, int metadata) {
         for (ManualCrusherRecipe r : RecipeLists.mcRecipes) {
-            if  (r != null && r.isValidOre(block, metadata)) {
+            if (r != null && r.isValidOre(block, metadata)) {
                 return r;
             }
         }

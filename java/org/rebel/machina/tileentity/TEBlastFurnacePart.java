@@ -43,6 +43,48 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
         inventory = new ItemStack[12];
     }
 
+    public static int getItemBurnTime(ItemStack stack) {
+        if (stack == null) {
+            return 0;
+        } else {
+            Item item = stack.getItem();
+            if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
+                Block block = Block.getBlockFromItem(item);
+                if (block == Blocks.wooden_slab) {
+                    return 150;
+                }
+                if (block.getMaterial() == Material.wood) {
+                    return 300;
+                }
+                if (block == Blocks.coal_block) {
+                    return 16000;
+                }
+            }
+            if (item instanceof ItemTool && ((ItemTool) item).getToolMaterialName().equals("WOOD")) {
+                return 200;
+            }
+            if (item instanceof ItemSword && ((ItemSword) item).getToolMaterialName().equals("WOOD")) {
+                return 200;
+            }
+            if (item == Items.stick) {
+                return 100;
+            }
+            if (item == Items.coal) {
+                return 1600;
+            }
+            if (item == Items.lava_bucket) {
+                return 20000;
+            }
+            if (item == Item.getItemFromBlock(Blocks.sapling)) {
+                return 100;
+            }
+            if (item == Items.blaze_rod) {
+                return 2400;
+            }
+            return GameRegistry.getFuelValue(stack);
+        }
+    }
+
     @Override
     public void onMachineAssembled(MultiblockControllerBase multiblockControllerBase) {
         super.onMachineAssembled(multiblockControllerBase);
@@ -52,14 +94,15 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
     }
 
     public MultiblockBlastFurnace getBlastFurnaceController() {
-        return (MultiblockBlastFurnace)this.getMultiblockController();
+        return (MultiblockBlastFurnace) this.getMultiblockController();
     }
 
     @Override
-    public void isGoodForSides() throws MultiblockValidationException {}
+    public void isGoodForSides() throws MultiblockValidationException {
+    }
 
     @Override
-         public void isGoodForFrame() throws MultiblockValidationException {
+    public void isGoodForFrame() throws MultiblockValidationException {
         int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
         if (BlockBlastFurnacePart.isController(metadata)) {
             throw new MultiblockValidationException("Blast Controller isn't proper for the frame!");
@@ -93,10 +136,12 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
     }
 
     @Override
-    public void onMachineActivated() {}
+    public void onMachineActivated() {
+    }
 
     @Override
-    public void onMachineDeactivated() {}
+    public void onMachineDeactivated() {
+    }
 
     @Override
     public MultiblockControllerBase createNewMultiblock() {
@@ -236,48 +281,6 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
             }
             int result = inventory[11].stackSize + stack.stackSize;
             return result <= getInventoryStackLimit() && result <= this.inventory[11].getMaxStackSize();
-        }
-    }
-
-    public static int getItemBurnTime(ItemStack stack) {
-        if (stack == null) {
-            return 0;
-        } else {
-            Item item = stack.getItem();
-            if (item instanceof ItemBlock && Block.getBlockFromItem(item) != Blocks.air) {
-                Block block = Block.getBlockFromItem(item);
-                if (block == Blocks.wooden_slab) {
-                    return 150;
-                }
-                if (block.getMaterial() == Material.wood) {
-                    return 300;
-                }
-                if (block == Blocks.coal_block) {
-                    return 16000;
-                }
-            }
-            if (item instanceof ItemTool && ((ItemTool)item).getToolMaterialName().equals("WOOD")) {
-                return 200;
-            }
-            if (item instanceof ItemSword && ((ItemSword)item).getToolMaterialName().equals("WOOD")) {
-                return 200;
-            }
-            if (item == Items.stick) {
-                return 100;
-            }
-            if (item == Items.coal) {
-                return 1600;
-            }
-            if (item == Items.lava_bucket) {
-                return 20000;
-            }
-            if (item == Item.getItemFromBlock(Blocks.sapling)) {
-                return 100;
-            }
-            if (item == Items.blaze_rod) {
-                return 2400;
-            }
-            return GameRegistry.getFuelValue(stack);
         }
     }
 

@@ -41,7 +41,7 @@ public class ItemDust extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemDustStrings.length-1);
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemDustStrings.length - 1);
         return "item." + MachinaNames.itemDustStrings[i];
     }
 

@@ -8,7 +8,8 @@ import net.minecraft.world.World;
  */
 public class BlockBlastFurnaceCarbon extends BlockBlastFurnacePart {
 
-    public BlockBlastFurnaceCarbon() {}
+    public BlockBlastFurnaceCarbon() {
+    }
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {

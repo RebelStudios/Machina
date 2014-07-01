@@ -41,7 +41,7 @@ public class ItemIngot extends Item {
 
     @Override
     public String getUnlocalizedName(ItemStack itemstack) {
-        int i = MathHelper.clamp_int(itemstack.getItemDamage(),0, MachinaNames.itemIngotStrings.length-1);
+        int i = MathHelper.clamp_int(itemstack.getItemDamage(), 0, MachinaNames.itemIngotStrings.length - 1);
         return "item." + MachinaNames.itemIngotStrings[i];
     }
 
@@ -49,7 +49,7 @@ public class ItemIngot extends Item {
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item par1, CreativeTabs creativeTab, List par3) {
         for (int x = 0; x < MachinaNames.itemIngotStrings.length; x++) {
-            par3.add(new ItemStack(this,1,x));
+            par3.add(new ItemStack(this, 1, x));
         }
     }
 
