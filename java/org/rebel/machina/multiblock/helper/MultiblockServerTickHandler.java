@@ -15,11 +15,11 @@ import net.minecraft.client.Minecraft;
  */
 public class MultiblockServerTickHandler {
     @SubscribeEvent
-    public void onServerTick(TickEvent.ServerTickEvent event) {
+    public void onServerTick(TickEvent.WorldTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
-            MultiblockRegistry.tickStart(Minecraft.getMinecraft().theWorld);
+            MultiblockRegistry.tickStart(event.world);
         } else if (event.phase == TickEvent.Phase.END) {
-            MultiblockRegistry.tickEnd(Minecraft.getMinecraft().theWorld);
+            MultiblockRegistry.tickEnd(event.world);
         }
     }
 }

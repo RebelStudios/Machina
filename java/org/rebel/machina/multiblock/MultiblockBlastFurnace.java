@@ -26,7 +26,6 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     public MultiblockBlastFurnace(World world) {
         super(world);
-        MachinaLog.mbInfo("ITSA ME! THE BLAST FURNACE CONTROLLER!");
         attachedControllers = new HashSet<MultiblockTileEntityBase>();
         if(world.isRemote) {
             ordinal = -1;
@@ -115,6 +114,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
             MachinaLog.mbWarn("attemping to assimilate with another non-blastfurnace machine");
             return;
         }
+
     }
 
     @Override

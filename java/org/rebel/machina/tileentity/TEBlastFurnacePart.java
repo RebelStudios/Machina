@@ -18,9 +18,7 @@ import org.rebel.machina.util.MachinaLog;
  */
 public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase implements IMultiblockGuiHandler {
 
-    public TEBlastFurnacePart() {
-        super();
-    }
+    public TEBlastFurnacePart() {}
 
     @Override
     public void onMachineAssembled(MultiblockControllerBase multiblockControllerBase) {
@@ -90,6 +88,8 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
     @Override
     public Object getContainer(InventoryPlayer inventoryPlayer) {
         if (!this.isConnected()) {
+            MachinaLog.mbWarn(this + " is not connected!\n" + this.xCoord + "," + this.yCoord + "," + this.zCoord);
+            MachinaLog.mbInfo("For reference the controller's value: " + this.getMultiblockController());
             return null;
         }
         int metadata = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);

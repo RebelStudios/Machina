@@ -47,6 +47,7 @@ public abstract class RectangularMultiblockControllerBase extends
 		// Any block deviating = NO DEAL SIR
 		TileEntity te;
 		RectangularMultiblockTileEntityBase part;
+        Class<? extends RectangularMultiblockControllerBase> myClass = this.getClass();
 		for(int x = minimumCoord.x; x <= maximumCoord.x; x++) {
 			for(int y = minimumCoord.y; y <= maximumCoord.y; y++) {
 				for(int z = minimumCoord.z; z <= maximumCoord.z; z++) {
@@ -55,6 +56,9 @@ public abstract class RectangularMultiblockControllerBase extends
 					te = this.worldObj.getTileEntity(x, y, z);
 					if(te instanceof RectangularMultiblockTileEntityBase) {
 						part = (RectangularMultiblockTileEntityBase)te;
+                        if (!myClass.equals(part.getMultiblockControllerType())) {
+                            throw new MultiblockValidationException("fuck");
+                        }
 					}
 					else {
 						// This is permitted so that we can incorporate certain non-multiblock parts inside interiors

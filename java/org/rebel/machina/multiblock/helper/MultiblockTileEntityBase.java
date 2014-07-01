@@ -6,6 +6,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.chunk.IChunkProvider;
+import org.rebel.machina.Machina;
 import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.util.MachinaLog;
 
@@ -68,7 +69,9 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 			// attachBlock will call onAttached, which will set the controller.
 			this.controller = bestController;
             bestController.attachBlock(this);
-		}
+		} else {
+            MachinaLog.mbError("Best controller seems to be null!");
+        }
 		return controllers;
 	}
 
@@ -277,26 +280,16 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 	@Override
 	public void onAssimilated(MultiblockControllerBase newController) {
 		assert(this.controller != newController);
-        if (newController == null) {
-            MachinaLog.mbWarn("Warning: controller is about to become null!");
-        }
-        MachinaLog.mbInfo(newController.toString() + "");
 		this.controller = newController;
 	}
 	
 	@Override
 	public void onAttached(MultiblockControllerBase newController) {
-        if (newController == null) {
-            MachinaLog.mbWarn("Warning: controller is about to become null!");
-        }
-        MachinaLog.mbInfo(newController.toString() + "");
 		this.controller = newController;
 	}
 	
 	@Override
 	public void onDetached(MultiblockControllerBase oldController) {
-        MachinaLog.mbWarn("Warning: controller is about to become null!");
-        MachinaLog.mbInfo(this.controller.toString());
 		this.controller = null;
 	}
 
@@ -335,7 +328,6 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 	@Override
 	public void onOrphaned(MultiblockControllerBase controller, int oldSize, int newSize) {
 		worldObj.markTileEntityChunkModified(xCoord, yCoord, zCoord, this);
-        MachinaLog.mbInfo(this.controller.toString());
 	}
 
 	///// Private/Protected Logic Helpers
@@ -346,17 +338,12 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 		if(this.controller != null) {
 			// Clean part out of controller
 			this.controller.detachBlock(this, chunkUnloading);
-            MachinaLog.mbWarn("Warning: controller is about to become null!");
 			// The above should call onDetached, but, just in case...
 			this.controller = null;
 		}
-        MachinaLog.mbInfo(this.controller.toString());
 		// Clean part out of lists in the registry
 		MultiblockRegistry.onPartRemovedFromWorld(worldObj, this);
 	}
 
-    public void printControllerValue() {
-        MachinaLog.mbError(this.controller + "");
-    }
 
 }

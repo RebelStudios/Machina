@@ -6,6 +6,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
+import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -17,6 +18,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraftforge.common.MinecraftForge;
 import org.rebel.machina.gui.MachinaGuiHandler;
 import org.rebel.machina.multiblock.helper.MultiblockEventHandler;
+import org.rebel.machina.multiblock.helper.MultiblockTileEntityBase;
 import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.proxy.IMachinaProxy;
 import org.rebel.machina.proxy.MachinaServerProxy;
@@ -26,6 +28,8 @@ import org.rebel.machina.tileentity.TEBlastFurnacePart;
 import org.rebel.machina.util.ConfigHandler;
 import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.worldgen.MachinaOreGeneration;
+
+import java.util.ArrayList;
 
 /**
  * @author XVicarious
@@ -42,6 +46,7 @@ public class Machina
     @SidedProxy(clientSide = "org.rebel.machina.proxy.MachinaClientProxy", serverSide = "org.rebel.machina.proxy.MachinaServerProxy")
     public static MachinaServerProxy proxy;
     public static SimpleNetworkWrapper network;
+    public static ArrayList<MultiblockTileEntityBase> controllerLess;
     public static MultiblockEventHandler multiblockEventHandler;
     public static final CreativeTabs machinaTab = new CreativeTabs("tabMachina") {
         @Override
@@ -65,6 +70,7 @@ public class Machina
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        controllerLess = new ArrayList<MultiblockTileEntityBase>();
         multiblockEventHandler = new MultiblockEventHandler();
         MinecraftForge.EVENT_BUS.register(multiblockEventHandler);
         proxy.init();
@@ -74,6 +80,11 @@ public class Machina
         GameRegistry.registerTileEntity(TEBlastFurnacePart.class, "TEBlastFurnacePart");
         GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new MachinaGuiHandler());
+    }
+
+    @EventHandler
+    public void serverStopping(FMLServerStoppingEvent event) {
+        MachinaLog.mbInfo(Machina.controllerLess.toString());
     }
 
     private void addRecipes() {
