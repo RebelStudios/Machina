@@ -70,7 +70,7 @@ public abstract class MultiblockTileEntityBase extends IMultiblockPart {
 			this.controller = bestController;
             bestController.attachBlock(this);
 		} else {
-            MachinaLog.mbError("Best controller seems to be null!");
+            MachinaLog.mbWarn("Best controller seems to be null!");
         }
 		return controllers;
 	}

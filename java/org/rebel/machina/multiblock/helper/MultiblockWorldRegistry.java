@@ -128,7 +128,6 @@ public class MultiblockWorldRegistry {
 						// FOREVER ALONE! Create and register a new controller.
 						// THIS IS THE ONLY PLACE WHERE NEW CONTROLLERS ARE CREATED.
 						MultiblockControllerBase newController = orphan.createNewMultiblock();
-                        MachinaLog.mbInfo("New controller!");
 						newController.attachBlock(orphan);
 						this.controllers.add(newController);
 					}

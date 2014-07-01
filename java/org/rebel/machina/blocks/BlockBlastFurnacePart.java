@@ -69,6 +69,7 @@ public class BlockBlastFurnacePart extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
         icons = new IIcon[2];
+        icons[0] = ir.registerIcon(Machina.MODID + ":" + "blockBlastController");
         icons[1] = ir.registerIcon(Machina.MODID + ":" + "blockToughBrick");
     }
 }

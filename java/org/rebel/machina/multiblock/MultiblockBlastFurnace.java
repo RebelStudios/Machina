@@ -42,7 +42,6 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onBlockAdded(IMultiblockPart newPart) {
-        MachinaLog.info("Adding part!");
         if (newPart instanceof TEBlastFurnacePart) {
             TEBlastFurnacePart teb = (TEBlastFurnacePart)newPart;
             if (BlockBlastFurnacePart.isController(teb.getBlockMetadata())) {
@@ -63,7 +62,7 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
 
     @Override
     protected void onMachineAssembled() {
-        MachinaLog.mbInfo("Assembled!");
+        MachinaLog.mbInfo("BlastFurnace is assembled!");
     }
 
     @Override
