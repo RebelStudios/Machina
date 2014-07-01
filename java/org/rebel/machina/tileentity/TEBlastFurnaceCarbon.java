@@ -4,7 +4,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
-import org.rebel.machina.blocks.BlockBlastFurnacePart;
 import org.rebel.machina.gui.GuiBlastFurnace;
 import org.rebel.machina.gui.container.ContainerBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;

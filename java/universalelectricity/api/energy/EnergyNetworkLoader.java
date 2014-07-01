@@ -1,10 +1,10 @@
 package universalelectricity.api.energy;
 
+import cpw.mods.fml.common.FMLLog;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-
-import cpw.mods.fml.common.FMLLog;
 
 /**
  * A dynamic network loader for injecting energy networks (NOT for other networks such as fuild

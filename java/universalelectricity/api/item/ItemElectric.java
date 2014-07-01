@@ -1,10 +1,5 @@
 package universalelectricity.api.item;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
-import java.util.List;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -13,12 +8,13 @@ import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagFloat;
 import net.minecraft.nbt.NBTTagLong;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import universalelectricity.api.CompatibilityModule;
 import universalelectricity.api.UniversalElectricity;
 import universalelectricity.api.energy.UnitDisplay;
 import universalelectricity.api.energy.UnitDisplay.Unit;
+
+import java.util.List;
 
 /** Extend from this class if your item requires electricity or to be charged. Optionally, you can
  * implement IItemElectric instead.

@@ -1,11 +1,11 @@
 package universalelectricity.api;
 
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.util.ForgeDirection;
+
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.util.ForgeDirection;
 
 /** A module to extend for compatibility with other energy systems. */
 public abstract class CompatibilityModule

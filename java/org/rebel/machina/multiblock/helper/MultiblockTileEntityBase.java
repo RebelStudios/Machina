@@ -6,7 +6,6 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.chunk.IChunkProvider;
-import org.rebel.machina.Machina;
 import org.rebel.machina.util.CoordTriplet;
 import org.rebel.machina.util.MachinaLog;
 

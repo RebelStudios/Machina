@@ -11,7 +11,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.*;
-import net.minecraft.tileentity.TileEntityFurnace;
 import org.rebel.machina.MachinaItems;
 import org.rebel.machina.blocks.BlockBlastFurnacePart;
 import org.rebel.machina.gui.GuiBlastFurnace;
@@ -21,7 +20,6 @@ import org.rebel.machina.multiblock.MultiblockBlastFurnace;
 import org.rebel.machina.multiblock.helper.MultiblockControllerBase;
 import org.rebel.machina.multiblock.helper.MultiblockValidationException;
 import org.rebel.machina.multiblock.helper.rectangular.RectangularMultiblockTileEntityBase;
-import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/22/2014.

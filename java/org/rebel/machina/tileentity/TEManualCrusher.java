@@ -1,7 +1,5 @@
 package org.rebel.machina.tileentity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
@@ -12,10 +10,7 @@ import org.rebel.machina.Machina;
 import org.rebel.machina.network.MessageManualCrusher;
 import org.rebel.machina.recipe.ManualCrusherRecipe;
 import org.rebel.machina.recipe.RecipeLists;
-import org.rebel.machina.util.MachinaLog;
 import org.rebel.machina.util.MachinaUtil;
-
-import java.util.Random;
 
 /**
  * Created by XVicarious on 6/16/2014.

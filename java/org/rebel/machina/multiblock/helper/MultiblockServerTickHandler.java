@@ -2,7 +2,6 @@ package org.rebel.machina.multiblock.helper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
-import net.minecraft.client.Minecraft;
 
 /**
  * This is a generic multiblock tick handler. If you are using this code on your own,

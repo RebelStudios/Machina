@@ -1,12 +1,10 @@
 package org.rebel.machina.gui;
 
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.Slot;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.rebel.machina.Machina;
 import org.rebel.machina.tileentity.TEBlastFurnacePart;
-import org.rebel.machina.util.MachinaLog;
 
 /**
  * Created by XVicarious on 6/29/2014.

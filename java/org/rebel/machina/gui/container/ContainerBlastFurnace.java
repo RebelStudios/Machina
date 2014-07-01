@@ -3,9 +3,7 @@ package org.rebel.machina.gui.container;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
-import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
 import org.rebel.machina.tileentity.TEBlastFurnacePart;
 
 /**

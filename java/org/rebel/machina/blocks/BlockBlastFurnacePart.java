@@ -15,7 +15,6 @@ import net.minecraft.world.World;
 import org.rebel.machina.Machina;
 import org.rebel.machina.info.MachinaNames;
 import org.rebel.machina.tileentity.TEBlastFurnacePart;
-import org.rebel.machina.util.MachinaLog;
 
 import java.util.List;
 
