@@ -25,7 +25,6 @@ public abstract class MultiblockControllerBase {
     protected World worldObj;
     protected AssemblyState assemblyState;
 
-    ;
     protected HashSet<IMultiblockPart> connectedParts;
     protected boolean debugMode;
     /**
@@ -367,7 +366,7 @@ public abstract class MultiblockControllerBase {
         }
 
         this.assemblyState = AssemblyState.Assembled;
-        if (oldState == assemblyState.Paused) {
+        if (oldState == AssemblyState.Paused) {
             onMachineRestored();
         } else {
             onMachineAssembled();

@@ -33,7 +33,7 @@ public class ContainerBlastFurnace extends Container {
 
     @Override
     public boolean canInteractWith(EntityPlayer var1) {
-        return part.getBlastFurnaceController() != null ? true : false;
+        return part.getBlastFurnaceController() != null;
     }
 
     private void bindInventory(InventoryPlayer inventoryPlayer) {

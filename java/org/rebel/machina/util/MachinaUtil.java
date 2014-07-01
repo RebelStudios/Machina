@@ -48,10 +48,7 @@ public class MachinaUtil {
      * @return If the block is in fact air, true.  If not false
      */
     public static boolean isBlockAir(World world, int x, int y, int z) {
-        if (world.getBlock(x, y, z) == Blocks.air) {
-            return true;
-        }
-        return false;
+        return world.getBlock(x, y, z) == Blocks.air;
     }
 
     /**

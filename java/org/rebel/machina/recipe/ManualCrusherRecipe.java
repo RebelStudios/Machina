@@ -16,7 +16,6 @@ public class ManualCrusherRecipe {
     public ArrayList<ItemStack> blockOre;
     public Pair<Integer, Integer> jumpsToCrush;
     public Pair<ItemStack, Float>[] outputs;
-    private String blockOreString;
 
     /**
      * Adds a new Manual Crusher Recipe
@@ -30,7 +29,6 @@ public class ManualCrusherRecipe {
         if (ore instanceof Block) {
             this.blockOre.add(new ItemStack((Block) ore, 1, 0));
         } else if (ore instanceof String) {
-            this.blockOreString = (String) ore;
             for (ItemStack i : OreDictionary.getOres((String) ore)) {
                 this.blockOre.add(i);
             }

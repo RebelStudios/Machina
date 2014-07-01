@@ -111,7 +111,6 @@ public class MultiblockBlastFurnace extends RectangularMultiblockControllerBase 
     protected void onAssimilate(MultiblockControllerBase assimilated) {
         if (!(assimilated instanceof MultiblockBlastFurnace)) {
             MachinaLog.mbWarn("attemping to assimilate with another non-blastfurnace machine");
-            return;
         }
 
     }

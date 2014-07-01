@@ -9,7 +9,7 @@ import org.rebel.machina.tileentity.TEToughBrick;
  */
 public class BlockToughBrick extends BlockBlastFurnacePart {
 
-    public BlockToughBrick() {
+    private BlockToughBrick() {
         super();
     }
 

@@ -5,7 +5,6 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -58,11 +57,6 @@ public class Machina {
         ConfigHandler.init(event.getSuggestedConfigurationFile());
         network = NetworkRegistry.INSTANCE.newSimpleChannel("Machina");
         network.registerMessage(MessageManualCrusher.Handle.class, MessageManualCrusher.class, 1, Side.SERVER);
-    }
-
-    @EventHandler
-    public void startServer(FMLServerAboutToStartEvent event) {
-
     }
 
     @EventHandler
