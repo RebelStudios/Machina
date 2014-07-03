@@ -25,7 +25,6 @@ public class GuiBlastFurnace extends MachinaGUIBase {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float var1, int var2, int var3) {
-        //fontRendererObj.drawString("Blast Furnace", 8, 6, 4210752);
         ResourceLocation containerBg = new ResourceLocation(Machina.MODID.toLowerCase(), "textures/gui/guiBlastFurnace.png");
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
         this.mc.renderEngine.bindTexture(containerBg);

@@ -219,3 +219,6 @@ gradlew.bat
 gradlew
 gradle/
 eclipse/
+.gradle/
+lib/
+build/

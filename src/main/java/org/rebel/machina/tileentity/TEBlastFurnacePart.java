@@ -242,20 +242,25 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
     }
 
     @Override
-    public void openInventory() {
-
-    }
+    public void openInventory() {}
 
     @Override
-    public void closeInventory() {
-
-    }
+    public void closeInventory() {}
 
     @Override
     public boolean isItemValidForSlot(int slot, ItemStack var2) {
         if (slot == 0 || slot == 1) {
             if (var2.getItem() == Items.coal) {
                 return true;
+            } else {
+                return false;
+            }
+        }
+        if (slot == 3 || slot == 4 || slot == 5 || slot == 6 || slot == 7 || slot == 8 || slot == 9 || slot == 10 || slot == 11) {
+            if (var2.getItem() == Items.iron_ingot) {
+                return true;
+            } else {
+                return false;
             }
         }
         return false;
@@ -317,11 +322,59 @@ public class TEBlastFurnacePart extends RectangularMultiblockTileEntityBase impl
 
     private boolean areInputsEmpty() {
         for (int i = 2; i < 11; i++) {
-            if (inventory[0] != null) {
+            if (inventory[i] != null) {
                 return false;
             }
         }
         return true;
     }
+
+    public void updateEntity() {
+        boolean flag = this.furnaceBurnTime > 0;
+        boolean flag1 = false;
+        if (this.furnaceBurnTime > 0) {
+            --this.furnaceBurnTime;
+        }
+        if (!this.worldObj.isRemote) {
+            if (this.furnaceBurnTime == 0 && this.canSmelt()) {
+                this.currentItemBurnTime = this.furnaceBurnTime = getItemBurnTime(this.inventory[0]);
+                if (this.furnaceBurnTime > 0) {
+                    flag1 = true;
+                    if (!areInputsEmpty()) {
+                        decreaseIronInSlots();
+                    }
+                }
+            }
+        }
+        if (this.isBurning() && this.canSmelt()) {
+            ++this.furnaceCookTime;
+            if (this.furnaceCookTime == 200) {
+                this.furnaceCookTime = 0;
+                this.smeltItems();
+                flag1 = true;
+            }
+        } else {
+            this.furnaceCookTime = 0;
+        }
+        if (flag != this.furnaceBurnTime > 0) {
+            flag1 = true;
+        }
+        if (flag1) {
+            this.markDirty();
+        }
+    }
+
+    private void decreaseIronInSlots() {
+        for (int i = 2; i < 11; i++) {
+            if (inventory[i].getItem() == Items.iron_ingot) {
+                --inventory[i].stackSize;
+                if (this.inventory[i].stackSize == 0) {
+                    this.inventory[i] = inventory[i].getItem().getContainerItem(inventory[i]);
+                }
+            }
+        }
+    }
+
+
 
 }

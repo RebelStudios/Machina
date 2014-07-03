@@ -5,7 +5,6 @@ import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -71,11 +70,6 @@ public class Machina {
         GameRegistry.registerTileEntity(TEBlastFurnacePart.class, "TEBlastFurnacePart");
         GameRegistry.registerWorldGenerator(new MachinaOreGeneration(), 0);
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new MachinaGuiHandler());
-    }
-
-    @EventHandler
-    public void serverStopping(FMLServerStoppingEvent event) {
-        MachinaLog.mbInfo(Machina.controllerLess.toString());
     }
 
     private void addRecipes() {

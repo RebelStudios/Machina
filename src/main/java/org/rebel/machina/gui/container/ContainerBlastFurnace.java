@@ -25,7 +25,7 @@ public class ContainerBlastFurnace extends Container {
         // Input for the iron (the 3x3 inventory part)
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                blastInput[i] = addSlotToContainer(new Slot(part, j + (1 + 3 * i), 44 + j * 18, 12 + i * 18));
+                blastInput[i] = addSlotToContainer(new Slot(part, j + (2 + 3 * i), 44 + j * 18, 12 + i * 18));
             }
         }
         blastOutput = addSlotToContainer(new Slot(part, 11, 137, 30));

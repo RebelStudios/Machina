@@ -58,9 +58,7 @@ public class MessageManualCrusher implements IMessage {
             int yCoord = message.y;
             int zCoord = message.z;
             ItemStack i = message.i;
-            MachinaLog.info("Setting block to air.");
             worldObj.setBlockToAir(xCoord, yCoord - 1, zCoord);
-            MachinaLog.info("Spawning item.");
             EntityItem ei = new EntityItem(worldObj, xCoord, yCoord - 1, zCoord, i);
             worldObj.spawnEntityInWorld(ei);
             return null;
