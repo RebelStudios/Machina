@@ -24,7 +24,6 @@ public class MachinaBlocks {
     public static Block blockOre;
     public static Block blockMetal;
     public static Block blockBFParts;
-    public static Block blockBFCarbon;
 
     private static void makeBlocks() {
         machineWall = new BlockMachineWall().setBlockName("machina.machineWall").setBlockTextureName(Machina.MODID + ":machineWall_0").setCreativeTab(Machina.machinaTab);
@@ -34,7 +33,6 @@ public class MachinaBlocks {
         blockOre = new BlockOre().setBlockName("machina.blockOre").setCreativeTab(Machina.machinaTab);
         blockMetal = new BlockMetal().setBlockName("machina.blockMetal").setCreativeTab(Machina.machinaTab);
         blockBFParts = new BlockBlastFurnacePart().setBlockName("machina.blockBFPart").setCreativeTab(Machina.machinaTab);
-        blockBFCarbon = new BlockBlastFurnaceCarbon().setBlockName("machina.blockBFCarbon").setCreativeTab(Machina.machinaTab);
     }
 
     private static void oreRegister() {
@@ -57,7 +55,6 @@ public class MachinaBlocks {
         GameRegistry.registerBlock(blockOre, ItemBlockOre.class, "machina.blockOre");
         GameRegistry.registerBlock(blockMetal, ItemBlockMetal.class, "machina.blockMetal");
         GameRegistry.registerBlock(blockBFParts, ItemBlockBlastFurnacePart.class, "machina.blockBFPart");
-        GameRegistry.registerBlock(blockBFCarbon, "machina.blockBFCarbon");
         GameRegistry.registerTileEntity(TEManualCrusher.class, "TEManualCrusher");
         oreRegister();
     }

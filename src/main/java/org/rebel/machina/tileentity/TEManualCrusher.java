@@ -1,6 +1,6 @@
 package org.rebel.machina.tileentity;
 
-import javafx.util.Pair;
+import org.rebel.machina.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

@@ -18,7 +18,7 @@ buildscript {
 apply plugin: 'forge'
 
 version = "1.7.2-indev"
-group= "org.rebel.Machina" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "org.rebel.machina" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "Machina"
 
 minecraft {
@@ -35,6 +35,7 @@ dependencies {
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+	compile files("C:/program files/java/jdk1.7.0_51/jre/lib/jfxrt.jar")
 
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
@@ -67,5 +68,5 @@ compileOnly
 }
 
 dependencies {
-compileOnly files ('libs/UniversalElectricity-1.7.2-3.2.0-dev.jar')
+//compileOnly files ('libs/UniversalElectricity-1.7.2-3.2.0-dev.jar')
 }

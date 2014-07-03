@@ -1,10 +1,10 @@
 package org.rebel.machina.recipe;
 
-import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import org.rebel.machina.util.MachinaUtil;
+import org.rebel.machina.util.Pair;
 
 import java.util.ArrayList;
 

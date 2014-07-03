@@ -3,6 +3,7 @@ package org.rebel.machina.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,6 +27,10 @@ public class BlockBlastFurnacePart extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
+
+    public BlockBlastFurnacePart() {
+        super(Material.rock);
+    }
 
     public static boolean isController(int metadata) {
         return metadata == _CONTROLLER_META;

@@ -1,12 +1,12 @@
 package org.rebel.machina.recipe;
 
-import javafx.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import org.rebel.machina.MachinaItems;
 import org.rebel.machina.info.MachinaNames;
+import org.rebel.machina.util.Pair;
 
 import java.util.ArrayList;
 
