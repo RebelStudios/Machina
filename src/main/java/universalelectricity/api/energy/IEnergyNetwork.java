@@ -15,8 +15,8 @@ public interface IEnergyNetwork extends INodeNetwork<IEnergyNetwork, IConductor,
 	 * Produces power to the energy network.
 	 * 
 	 * @param conductor - The conductor that is producing into the energy.
-	 * @param side - The direction the source is producing out towards.
-	 * @param receive - The amount that is produced.
+	 * @param from - The direction the source is producing out towards.
+	 * @param amount - The amount that is produced.
 	 * @return The amount that was accepted by the network.
 	 */
 	public long produce(IConductor conductor, ForgeDirection from, long amount, boolean doProduce);
